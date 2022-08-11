@@ -3,7 +3,7 @@ const express = require("express")
 const {exec} =require("child_process")
 //ps
 
-const { ps_code } = require("./public/ps")
+//const { ps_code } = require("./public/ps")
 
 
 
