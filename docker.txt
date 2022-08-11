@@ -1,6 +1,6 @@
 Docker commands to be inserted.
 
-#...Pull or download images/OS
+#...Pull or download images/OS...
 
 docker pull <img-name:version>
 
@@ -10,9 +10,19 @@ docker pull <img-name:version>
 docker run -i -t --name container-name image-name
 
 
-#...To start stoppes container/OS
+#...To start stoppes container/OS...
 
 docker start <img-name>
+
+
+#...To check status of docker service...
+
+systemctl status docker
+
+
+#...To start docker service...
+
+systemctl start docker
 
 
 #...To check list of docker images...
@@ -30,18 +40,38 @@ docker info
 docker ps
 
 
-# to check all installed images and check info about all(running/stopped)
+# to check all installed images and check info about all(running/stopped)...
 
 docker ps -a
 
 
-#...To stop launched OS/Img
+#...To stop launched OS/Img...
 
 docker stop
 
 
-#...To attach/conect with OS
+#...For make any service permanent available...
+
+systemctl enable docker
+
+
+#...To attach/conect with OS...
 
 docker attach <os-id/img-name>
+
+
+#...To remove image/OS/Container permanently(This cmd not remove running OS)...
+
+docker rm <container-id/img-name>
+
+
+#...To remmove all containers permanently included running OS...
+
+docker rm -f $(docker ps -a -q)
+
+
+#...To print ID of all available OS/Images...
+
+docker ps -a -q
 
 
