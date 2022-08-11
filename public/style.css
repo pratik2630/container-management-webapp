@@ -1,0 +1,245 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+/* :root {
+  --navbar-width: 300px;
+  
+} */
+* {
+  margin: 0;
+  padding: 0;
+  
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+ 
+  justify-content: center;
+  
+
+  overflow: hidden;
+}
+
+.container {
+  /* for testing 80% */
+  height: 80%;
+  display: flex;
+  
+  overflow: hidden;
+}
+
+main {
+  height: 100%;
+  margin: 2px;
+  overflow: hidden;
+
+  border: 2px solid black;
+  border-radius: 55px;
+  height: auto;
+}
+
+aside {
+  
+  border: 1px solid black;
+  border-radius: 55px;
+  height: 500px;
+  
+  height: 100%;
+  width: 20%;
+  align-items: center;
+  justify-content: center;
+}
+.navbar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+nav,
+ul {
+  width: 100%;
+  text-align: center;
+}
+li {
+  list-style: none;
+  padding: 15px 10px;
+  position: relative;
+  letter-spacing: 0px;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+  transform: translateY(0px);
+}
+li:hover {
+  letter-spacing: 1px;
+  transform: translateY(1px);
+ 
+  font-weight: 600;
+}
+li::before {
+  content: "";
+  
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0%;
+  z-index: -1;
+  
+}
+
+li:hover::before {
+  width: 100%;
+}
+.card {
+  height: 500px;
+  padding: 30px;
+  display: none;
+  width: calc(100vw - 0px);
+  
+
+  transform: translateX(-100%);
+}
+.card.active {
+  height: 100%;
+
+  display: block;
+  animation: slide 500ms ease-in-out both;
+}
+.card .title {
+    color: black;
+  font-size: 2rem;
+  border-bottom: 1px solid #ccc;
+}
+.card .content {
+    color: black;
+  font-size: 1.5rem;
+}
+
+
+.selectedLink {
+  background-color: black;
+  color: white;
+  font-weight: 600;
+}
+@keyframes slide {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+
+/* :root{
+    --navbar-width:300px;
+    --color-light:#ffff;
+}
+
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 100px;
+}
+
+
+.container{
+    display: flex;
+    box-shadow: 0px 0px 15px 3px;
+}
+
+aside{
+    width: var(--navbar-width);
+    height: 500px;
+    display: flex;
+    align-items: center ;
+    justify-content: center;
+    box-shadow: 0px 0px 15px  3px;
+}
+
+.narbar{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    
+    
+    gap: 30px;
+    align-items: center;
+}
+
+nav, 
+ul{
+width: 100%;
+text-align: center;
+}
+li{
+    list-style: none;
+    padding: 15px 10px;
+    position: relative;
+    letter-spacing: 0px;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+    transform: translateY(0px);
+}
+
+li:hover{
+letter-spacing: 1px;
+transform: translateY(1px);
+color: var(--color-light);
+}
+li::before{
+    content: '';
+    background-color: red;
+
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0%;
+    z-index: -1;
+}
+li:hover::before{
+    width: 100%;
+   
+}
+
+
+
+.card{
+    height: 500px;
+    padding: 30px;
+    display: none;
+    width: calc(100vw - 500px);
+}
+.card.active{
+    display: block;
+}
+
+.card .title{
+    font-size: 2rem;
+    border-bottom: 1px solid black;
+}
+.card .content{
+    font-size: 1.5rem;
+} */
