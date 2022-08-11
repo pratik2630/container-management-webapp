@@ -1,10 +1,47 @@
 Docker commands to be inserted.
 
+#...Pull or download images/OS
 
-#docker run cmd
+docker pull <img-name:version>
 
-docker run -dit --name container-name image-name
 
-#list docker images
+#...Docker run command...
+
+docker run -i -t --name container-name image-name
+
+
+#...To start stoppes container/OS
+
+docker start <img-name>
+
+
+#...To check list of docker images...
 
 docker images
+
+
+#...To get all information about docker...
+
+docker info
+
+
+#...To check running OS...
+ 
+docker ps
+
+
+# to check all installed images and check info about all(running/stopped)
+
+docker ps -a
+
+
+#...To stop launched OS/Img
+
+docker stop
+
+
+#...To attach/conect with OS
+
+docker attach <os-id/img-name>
+
+
