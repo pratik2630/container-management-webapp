@@ -5,9 +5,30 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Docker Web Ap</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+  <title>Docker Web App</title>
   <link rel="stylesheet" href="style.css" />
   <script src="Home.js" defer></script>
+<style>  
+  .formContainer {
+    height: 50%;
+    border-radius: 10px;
+    background-color: rgb(224, 224, 224);
+    padding: 20px;
+    width: 500px;
+    /* margin-top: 10px; */
+    display: none;
+    justify-content: center;
+    position: absolute;
+    align-items: center;
+    margin: 0px 0px 20px 15vw;
+    /* margin-top: 0%; */
+      }
+    </style>
+
 </head>
 
 <body>
@@ -33,55 +54,58 @@
     <main>
       <div class="card active container" data-container>
         <div class="title">Container Page</div>
+        
+    <div class="main">
+      <button class="btn btn-success" onclick="displayPopup()">Add Container</button>
+  </div>
+  <div class="formContainer" id="formContainer">
+      <form>
+          <div class="form-group">
+            <label for="name">Container Name</label>
+            <input type="text" class="form-control" id="containerName" aria-describedby="emailHelp" placeholder="Enter Container Name">
+           
+          </div>
+          <div class="form-group">
+              <label for="name">Image Name</label>
+          <select class="form-control form-control-lg">
+              <option>Ubuntu</option>
+              <option>Centos</option>
+             
+            </select>
+          </div>
+          <div class="form-group">
+              <label for="name">Exposed Port</label>
+              <input type="text" class="form-control" id="containerName" aria-describedby="emailHelp" placeholder="Enter Exposed Port Number eg. 8080:80">
+             
+            </div>
+           
+          <div class="btn">
+              <button type="submit" class="btn btn-success">Submit</button>
+              <button type="cancel" class="btn btn-danger" onclick="cancelPopup()">cancel</button>
+
+          </div>
+        </form>
+  </div>
+  <script>
+       function displayPopup() {
+          document.getElementById("formContainer").style.display = "block";
+      }
+      function cancelPopup() {
+          document.getElementById("formContainer").style.display = "none";
+      }
+  </script>
         <div class="content" style="background-color: green;">Container Here
-          <table>
-            <tr>
-              <th>Container ID</th>
-              <th>Image Name</th>
-              <th>Command</th>
-              <th>Container name</th>
-            </tr>
-            <tr>  
-            <td id="id">id</td>
-            <td>img name</td>
-            <td>cmd</td>
-            <td> containr name</td>
-            </tr>
-          </table>
-
-
 
         </div>
       </div>
 
 
-
-
-<script>
-  function ps_code() {
-    const xhttp = new XMLHttpRequest();
-    xhttp.onload = function() {
-      document.getElementById("content").innerHTML =
-      this.responseText;
-    }
-    xhttp.open("GET", "http://localhost:3001/ps");
-    xhttp.send();
-  }
-  function ps_code() {
-    const xhttp = new XMLHttpRequest();
-    xhttp.onload = function() {
-      document.getElementById("content").innerHTML =
-      this.responseText;
-    }
-    xhttp.open("GET", "http://localhost:3001/dimage");
-    xhttp.send();
-  }
-  </script>
-
       <div class="card images" data-images>
+        
         <div class="title" style="background-color:blue;">Images Me Page</div>
+        <!-- <button onclick="ps_code()">Button</button> -->
+        <div id="img_content" style="background-color:aqua;"">Images Here</div>
         <button onclick="ps_code()">Button</button>
-        <div id="content" style="background-color:aqua;"">Images Here</div>
       </div>
 
 

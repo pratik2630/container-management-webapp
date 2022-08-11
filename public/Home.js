@@ -45,6 +45,27 @@ const highLightSelectedLink = (currentIndex) => {
 
 
 
+//<script>
+  function ps_code() {
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function() {
+      document.getElementById("content").innerHTML =
+      this.responseText;
+    }
+    xhttp.open("GET", "http://localhost:3001/ps");
+    xhttp.send();
+  }
+  function ps_code() {
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function() {
+      document.getElementById("img_content").innerHTML =
+      this.responseText;
+    }
+    xhttp.open("GET", "http://localhost:3001/dimage");
+    xhttp.send();
+  }
+ // </script>
+
 
 
 

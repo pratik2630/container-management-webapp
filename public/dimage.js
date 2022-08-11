@@ -8,10 +8,10 @@ function dimage_code(req, res) {
         res.write("<table  align='center' width='80%'>");
        
         a.forEach((cdetails) => {
-           console.log("cdetails:" +typeof cdetails)
+        //    console.log("cdetails:" +typeof cdetails)
             const cinfo = cdetails.trim().split(/\s+/)
-                console.log("cinfo:"+typeof cinfo)
-                console.log(cinfo)
+                // console.log("cinfo:"+typeof cinfo)
+                // console.log(cinfo)
                 res.write("<tr>" + "<td>" + cinfo[0] + "</td>" + "<td>" + cinfo[1] + "</td>" + "<td>" + cinfo[2] + "</td>" + "<td>" + cinfo[cinfo.length - 1] + "</td>" + "</tr>")    
       })
         res.write("</table>")
