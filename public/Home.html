@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Docker Web Ap</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="Home.js" defer></script>
+</head>
+
+<body>
+  <div>
+    <nav>
+      <h1>nav</h1>
+    </nav>
+  </div>
+  <div class="container">
+    <aside>
+      <div class="navbar">
+
+        <nav>
+          <ul>
+            <li class="selectedLink" name="container">Container</li>
+            <li name="images">Images</li>
+            <li name="terminal">Terminal</li>
+            <li name="dockerfile">Dockerfile</li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+    <main>
+      <div class="card active container" data-container>
+        <div class="title">Container Page</div>
+        <div class="content">Container Here
+          <table>
+            <tr>
+              <th>Container ID</th>
+              <th>Image Name</th>
+              <th>Command</th>
+              <th>Container name</th>
+            </tr>
+            <tr>  
+            <td id="id">id</td>
+            <td>img name</td>
+            <td>cmd</td>
+            <td> containr name</td>
+            </tr>
+          </table>
+
+
+
+        </div>
+      </div>
+      <div class="card images" data-images>
+        <div class="title">Images Me Page</div>
+        <div class="content">Images Here</div>
+      </div>
+      <div class="card terminal" data-terminal>
+        <div class="title">Terminal Page</div>
+        <div class="content">Content Here</div>
+      </div>
+      <div class="card dockerfile" data-dockerfile>
+        <div class="title">Docker Page</div>
+        <div class="content">Content Here</div>
+      </div>
+    </main>
+  </div>
+  <script>
+    const showMessage = () => {
+      alert("Hello JavaScript");
+    };
+  </script>
+</body>
+
+</html>
