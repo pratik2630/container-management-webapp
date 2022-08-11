@@ -1,0 +1,47 @@
+.addbtn{
+    color: black;
+    background-color: green;
+    font-size: 20px;
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+}
+.addbtn:hover{
+    background-color: black;
+    color: white;
+}
+
+.form-group{
+   
+    margin: 10px;
+   padding: 5px;
+   font-size: 20px;
+    border: 2px solid rgb(2, 2, 2);
+}
+.form-group label{
+ color: red;
+}
+
+.form-control {
+    padding: 5px;
+    font-size: 15px;
+    border: 2px solid rgb(2, 2, 2);
+    margin-left: 20px;
+}
+
+.btn-same{
+    
+    color: black;
+    background-color: green;
+    font-size: 20px;
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+}
+.btn-same:hover{
+    background-color: black;
+    color: white;
+}
+
