@@ -33,7 +33,7 @@
     <main>
       <div class="card active container" data-container>
         <div class="title">Container Page</div>
-        <div class="content">Container Here
+        <div class="content" style="background-color: green;">Container Here
           <table>
             <tr>
               <th>Container ID</th>
@@ -53,10 +53,38 @@
 
         </div>
       </div>
+
+
+
+
+<script>
+  function ps_code() {
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function() {
+      document.getElementById("content").innerHTML =
+      this.responseText;
+    }
+    xhttp.open("GET", "http://localhost:3001/ps");
+    xhttp.send();
+  }
+  function ps_code() {
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function() {
+      document.getElementById("content").innerHTML =
+      this.responseText;
+    }
+    xhttp.open("GET", "http://localhost:3001/dimage");
+    xhttp.send();
+  }
+  </script>
+
       <div class="card images" data-images>
-        <div class="title">Images Me Page</div>
-        <div class="content">Images Here</div>
+        <div class="title" style="background-color:blue;">Images Me Page</div>
+        <button onclick="ps_code()">Button</button>
+        <div id="content" style="background-color:aqua;"">Images Here</div>
       </div>
+
+
       <div class="card terminal" data-terminal>
         <div class="title">Terminal Page</div>
         <div class="content">Content Here</div>
