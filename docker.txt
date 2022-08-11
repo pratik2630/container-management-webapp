@@ -65,6 +65,11 @@ docker attach <os-id/img-name>
 docker rm <container-id/img-name>
 
 
+#...To remove image using rmi command (rmi- remove image)...
+
+docker rmi <img-name:tag>
+
+
 #...To remmove all containers permanently included running OS...
 
 docker rm -f $(docker ps -a -q)
@@ -73,5 +78,15 @@ docker rm -f $(docker ps -a -q)
 #...To print ID of all available OS/Images...
 
 docker ps -a -q
+
+
+#...Create a copy of the old image with new name...
+
+docker tag <old-name> <new-name>
+
+
+#...Rename container...
+
+docker rename <my_container> <my_new_container>
 
 
