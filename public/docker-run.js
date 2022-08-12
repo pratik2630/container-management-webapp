@@ -1,6 +1,7 @@
 const express = require("express")
 
-const { exec } = require("child_process")
+const { exec } = require("child_process");
+
 function drun_code(req, res) {
 
     var c_name=req.query.container_name;
@@ -28,7 +29,10 @@ function drun_code(req, res) {
         console.log("stdout: "+ stdout)
         console.log("stderr: "+ stderr)
         console.log("c_port "+ c_port)
-		res.send();
+       // setTimeout(ps_code(),5000)
+//       setTimeout(ps_code,5000)
+       res.send();
+        
 	})
 }
 

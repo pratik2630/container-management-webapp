@@ -4,11 +4,13 @@ const {exec} =require("child_process")
 //ps
 
 const { ps_code } = require("./public/ps")
-
 const { psall_code } = require("./public/ps_all")
-
 const { dimage_code } = require("./public/dimage")
 const { drun_code } = require("./public/docker-run")
+const { delete_container } = require("./public/delete_container")
+const { delete_all_container } = require("./public/delete_all_container")
+const { start_container } = require("./public/start_container")
+const { stop_container } = require("./public/stop_container")
 
 
 
@@ -35,6 +37,7 @@ app.get("/ps_all" ,(req,res)=>{
 	psall_code(req , res)
 })
 
+//display docker images
 app.get("/dimage" ,(req,res)=>{
 	dimage_code(req , res)
 })
@@ -48,4 +51,27 @@ app.get("/dimage" ,(req,res)=>{
 app.get("/docker_run", (req , res)=>{
     drun_code(req,res)
 })
+
+
+//start container
+app.get("/start", (req , res)=>{
+    start_container(req,res)
+})
+
+//stop container
+app.get("/stop", (req , res)=>{
+    stop_container(req,res)
+})
+
+//delete specified container
+app.get("/cdelete", (req , res)=>{
+    delete_container(req,res)
+})
+
+//delete all container
+app.get("/cdelete_all", (req , res)=>{
+    delete_all_container(req,res)
+})
+
+
 

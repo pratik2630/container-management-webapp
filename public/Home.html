@@ -54,11 +54,14 @@
       <div class="card active container" data-container>
         <div class="title">Containers</div>
         <div class="buttons">
+          <button class="addbtn" onclick="displayPopup()">Create Container</button>
+          <button class="addbtn" onclick="start_container()">start</button>
+          <button class="addbtn" onclick="stop_container()">Stop</button>
           <button class="addbtn" onclick="ps_code()">List</button>
           <button class="addbtn" onclick="psall_code()">List all</button>
-          <button class="addbtn">Delete</button>
-          <button class="addbtn">Delete All</button>
-          <button class="addbtn" onclick="displayPopup()">Create Container</button>
+          <button class="addbtn" onclick="delete_container()">Delete</button>
+          <button class="addbtn" onclick="delete_all_container()">Delete All</button>
+          
 
         </div>
         <div class="formContainer" id="formContainer">
@@ -113,25 +116,6 @@
             document.getElementById("formContainer").style.display = "none";
           }
           
-
-          function drun_code() {
-
-            var cname = document.getElementById("containerName").value
-            var cimage = document.getElementById("containerImage").value
-            var cport = document.getElementById("containerPort").value
-            
-            const xhttp = new XMLHttpRequest();
-  // xhttp.onload = function () {
-    // document.getElementById("container_content").innerHTML =
-    //   this.responseText;
-      // var cname = document.getElementById("containerName").value
-      // var cimage = document.getElementById("containerImage").value
-      // var cport = document.getElementById("containerPort").value
-//  }
-  xhttp.open("GET", "http://localhost:3001/docker_run?container_name="+cname+"&container_image="+cimage+"&container_port="+cport );
-  xhttp.send();
-}
-
         </script>
 
         <!-- form script end -->
