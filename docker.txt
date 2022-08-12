@@ -90,3 +90,44 @@ docker tag <old-name> <new-name>
 docker rename <my_container> <my_new_container>
 
 
+#...To push or to share your images to the Docker Hub registry or to a self-hosted one...
+
+docker push <OPTIONS> <NAME:TAG>
+
+
+#...To restart one or more containers...
+
+docker restart <my_container>
+
+
+#...To Search Docker Hub for images...
+
+docker search <TERM>
+
+
+#...To Manage Docker secrets...
+
+docker secret <COMMAND>
+
+
+#...To Creates a secret using standard input or from a file for the secret content...
+
+ docker secret create <my_secret>
+
+
+#...To Display detailed information on one or more secrets...
+
+docker secret inspect <my-secret>
+
+
+#...list of secrets...
+
+docker secret ls
+
+
+#...To Remove one or more secrets...
+
+docker secret rm <my-secret>
+
+
+
