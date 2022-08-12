@@ -5,19 +5,39 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
   <title>Docker Web Ap</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="addContainer.css">
   <script src="Home.js" defer></script>
+
+  <style>
+    .formContainer {
+      height: 25%;
+      border-radius: 10px;
+      background-color: rgb(216, 179, 179);
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      padding: 20px;
+      display: none;
+      position: absolute;
+      position: absolute;
+      top: 48%;
+      left: 43%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
 </head>
 
 <body>
-  <div>
+  <div class="navbar-top">
     <nav>
-      <h1>nav</h1>
+      <h1>DockerWebAPP</h1>
     </nav>
   </div>
   <div class="container">
-    <aside>
+    <div class="side-navbar">
       <div class="navbar">
 
         <nav>
@@ -29,11 +49,98 @@
           </ul>
         </nav>
       </div>
-    </aside>
+    </div>
     <main>
       <div class="card active container" data-container>
-        <div class="title">Container Page</div>
-        <div class="content">Container Here
+        <div class="title">Containers</div>
+        <div class="buttons">
+          <button class="addbtn" onclick="ps_code()">List</button>
+          <button class="addbtn" onclick="psall_code()">List all</button>
+          <button class="addbtn">Delete</button>
+          <button class="addbtn">Delete All</button>
+          <button class="addbtn" onclick="displayPopup()">Create Container</button>
+
+        </div>
+        <div class="formContainer" id="formContainer">
+          <form>
+            <div class="form-group">
+              <label for="name">Container Name</label>
+
+
+
+
+             
+              <!-- pop up form start -->
+
+              <input type="text" name="container_name"  class="form-control" id="containerName" aria-describedby="emailHelp"
+                placeholder="Enter Container Name">
+              
+              </div>
+              <div class="form-group">
+                <label for="name">Image Name</label>
+                <select name="container_image" id="containerImage" class="form-control form-control-lg">
+                  <option>ubuntu</option>
+                  <option>centos</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="name">Exposed Port</label>
+                <input name="container_port" type="text" class="form-control" id="containerPort" aria-describedby="emailHelp"
+                  placeholder="Enter Exposed Port Number eg. 8080:80">
+              
+              </div>
+              
+              <div class="btn">
+                <button type="submit" class="submit-btn btn-same" onclick="drun_code()">Run</button>
+                <button type="cancel" class="cancel-btn btn-same" onclick="cancelPopup()">cancel</button>
+              
+              </div>
+              </form>
+              </div>
+
+        <!-- pop up form end -->
+
+
+
+
+
+        <!-- form script start -->
+        <script>
+          function displayPopup() {
+            document.getElementById("formContainer").style.display = "block";
+          }
+          function cancelPopup() {
+            document.getElementById("formContainer").style.display = "none";
+          }
+          
+
+          function drun_code() {
+
+            var cname = document.getElementById("containerName").value
+            var cimage = document.getElementById("containerImage").value
+            var cport = document.getElementById("containerPort").value
+            
+            const xhttp = new XMLHttpRequest();
+  // xhttp.onload = function () {
+    // document.getElementById("container_content").innerHTML =
+    //   this.responseText;
+      // var cname = document.getElementById("containerName").value
+      // var cimage = document.getElementById("containerImage").value
+      // var cport = document.getElementById("containerPort").value
+//  }
+  xhttp.open("GET", "http://localhost:3001/docker_run?container_name="+cname+"&container_image="+cimage+"&container_port="+cport );
+  xhttp.send();
+}
+
+        </script>
+
+        <!-- form script end -->
+
+
+
+
+
+        <div class="content">
           <table>
             <tr>
               <th>Container ID</th>
@@ -41,29 +148,62 @@
               <th>Command</th>
               <th>Container name</th>
             </tr>
-            <tr>  
-            <td id="id">id</td>
-            <td>img name</td>
-            <td>cmd</td>
-            <td> containr name</td>
-            </tr>
+            <!-- <tr style="color: blue; background-color: aqua;">
+              <td id="id">id</td>
+              <td>img name</td>
+              <td>cmd</td>
+              <td> containr name</td> -->
+            <!-- </tr> -->
+            <!-- <div id="container_content" style="background-color:bisque ;">content</div> -->
           </table>
-
+          <div id="container_content" style="background-color:bisque ;">content</div>
 
 
         </div>
       </div>
+
+
+
+
+
+
+
+
+      <!-- Code of docker image page -->
       <div class="card images" data-images>
-        <div class="title">Images Me Page</div>
-        <div class="content">Images Here</div>
+        <div class="title">Images</div>
+
+        <button onclick="dimage_code()">Display Images</button>
+        <div class="content">
+          <tr>
+            <th>Container ID</th>
+            <th>Image Name</th>
+            <th>Command</th>
+            <th>Container name</th>
+          </tr>
+          <div id="content">
+
+            <!-- images -->
+          </div>
+        </div>
       </div>
-      <div class="card terminal" data-terminal>
+
+
+      <div class=" card terminal" data-terminal>
         <div class="title">Terminal Page</div>
-        <div class="content">Content Here</div>
+        <div class="content">
+
+          <!-- Content Here -->
+
+        </div>
       </div>
       <div class="card dockerfile" data-dockerfile>
-        <div class="title">Docker Page</div>
-        <div class="content">Content Here</div>
+        <div class="title">Dockerfile</div>
+        <div class="content">
+
+          <!-- Content Here -->
+
+        </div>
       </div>
     </main>
   </div>
