@@ -15,19 +15,17 @@
 
   <style>
     .formContainer {
-      height: 50%;
+      height: 25%;
       border-radius: 10px;
-      background-color: white;
-
+      background-color: rgb(216, 179, 179);
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       padding: 20px;
-      width: 500px;
-      /* margin-top: 10px; */
       display: none;
-      justify-content: center;
       position: absolute;
-      align-items: center;
-      margin: 0px 0px 20px 15vw;
-      /* margin-top: 0%; */
+      position: absolute;
+      top: 48%;
+      left: 43%;
+      transform: translate(-50%,-50%);
     }
   </style>
 </head>
@@ -35,7 +33,7 @@
 <body>
   <div class="navbar-top">
     <nav>
-      <h1>nav</h1>
+      <h1>DockerWebAPP</h1>
     </nav>
   </div>
   <div class="container">
@@ -54,10 +52,12 @@
     </div>
     <main>
       <div class="card active container" data-container>
-        <div class="title">Container Page</div>
-        <div class="main">
-          <button class="addbtn" onclick="displayPopup()">Add Container</button>
-        </div>
+        <div class="title">Containers</div>
+        <div class="buttons">
+             <button class="addbtn">Delete</button>
+            <button class="addbtn" onclick="displayPopup()">Add Container</button>
+            
+          </div>
         <div class="formContainer" id="formContainer">
           <form>
             <div class="form-group">
@@ -116,7 +116,7 @@
 
 
 
-        <div class="content" style="background-color: green;">Container Here
+        <div class="content">
           <table>
             <tr>
               <th>Container ID</th>
@@ -162,19 +162,30 @@
       </script>
 
       <div class="card images" data-images>
-        <div class="title" style="background-color:blue;">Images Me Page</div>
+        <div class="title">Images</div>
         <button onclick="ps_code()">Button</button>
-        <div id="content" style="background-color:aqua;"">Images Here</div>
+        <div id="content">
+
+          <!-- images -->
+        </div>
       </div>
 
 
       <div class=" card terminal" data-terminal>
           <div class="title">Terminal Page</div>
-          <div class="content">Content Here</div>
+          <div class="content">
+            
+            <!-- Content Here -->
+          
+          </div>
         </div>
         <div class="card dockerfile" data-dockerfile>
-          <div class="title">Docker Page</div>
-          <div class="content">Content Here</div>
+          <div class="title">Dockerfile</div>
+          <div class="content">
+            
+            <!-- Content Here -->
+          
+          </div>
         </div>
     </main>
   </div>

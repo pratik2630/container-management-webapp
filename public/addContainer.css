@@ -1,4 +1,6 @@
 .addbtn{
+
+
     color: black;
     background-color: green;
     font-size: 20px;
@@ -24,20 +26,27 @@
 }
 
 .form-control {
+    
     padding: 5px;
     font-size: 15px;
-    border: 2px solid rgb(2, 2, 2);
+    /* border: 2px solid rgb(2, 2, 2); */
     margin-left: 20px;
 }
 
+.btn{
+    display: flex;
+    justify-content: space-around;
+}
 .btn-same{
-    
+    height: 45px;
+  width: 130px;
     color: black;
-    background-color: green;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.6);
     font-size: 20px;
     border: 2px solid black;
     padding: 5px;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     transition-duration: 0.4s;
 }
 .btn-same:hover{
