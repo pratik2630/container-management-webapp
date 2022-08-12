@@ -66,3 +66,56 @@ function dimage_code() {
   xhttp.open("GET", "http://localhost:3001/dimage");
   xhttp.send();
 }
+
+
+
+
+function drun_code() {
+
+  var cname = document.getElementById("containerName").value
+  var cimage = document.getElementById("containerImage").value
+  var cport = document.getElementById("containerPort").value
+  
+  const xhttp = new XMLHttpRequest();
+
+xhttp.open("GET", "http://localhost:3001/docker_run?container_name="+cname+"&container_image="+cimage+"&container_port="+cport );
+xhttp.send();
+}
+
+
+function start_code() {
+
+  var cname = document.getElementById("containerName").value
+  var cimage = document.getElementById("containerImage").value
+  var cport = document.getElementById("containerPort").value
+  
+  const xhttp = new XMLHttpRequest();
+
+xhttp.open("GET", "http://localhost:3001/start?container_name="+cname);
+xhttp.send();
+}
+
+
+function stop_code() {
+
+  var cname = document.getElementById("containerName").value
+  const xhttp = new XMLHttpRequest();
+
+xhttp.open("GET", "http://localhost:3001/docker_run?stop="+cname );
+xhttp.send();
+}
+
+function delete_container_code() {
+
+  var cname = document.getElementById("containerName").value
+  const xhttp = new XMLHttpRequest();
+
+  xhttp.open("GET", "http://localhost:3001/cdelete?container_name="+cname );
+  xhttp.send();
+}
+
+function delete_all_container_code() { 
+  const xhttp = new XMLHttpRequest();
+  xhttp.open("GET", "http://localhost:3001/cdelete_all");
+  xhttp.send();
+}
