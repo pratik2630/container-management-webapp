@@ -5,11 +5,11 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+  
   <title>Docker Web Ap</title>
+  <script src="https://kit.fontawesome.com/53b90b81d5.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="container.css">
   <link rel="stylesheet" href="addContainer.css">
   <script src="Home.js" defer></script>
 
@@ -172,8 +172,18 @@
       <!-- Code of docker image page -->
       <div class="card images" data-images>
         <div class="title">Images</div>
+        <div class="allButtons">
 
-        <button onclick="dimage_code()">Display Images</button>
+          
+          <button class="container-btns" onclick="dimage_code()">Display Images</button>
+          <input type="text" placeholder="Search.." name="search" class="container-search">
+          <button type="submit" class="container-btns"><i class="fa fa-search"></i></button>
+          <button class="container-btns">Download</button>
+         
+          <button class="container-btns">Delete</button>
+          
+        </div>
+        
         <div class="content">
           <tr>
             <th>Container ID</th>

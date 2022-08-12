@@ -1,0 +1,52 @@
+.container-btns{
+    color: black;
+    background-color: green;
+    font-size: 20px;
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+}
+.container-btns:hover{
+    background-color: black;
+    color: white;
+}
+
+.container-search{
+    color: black;
+    background-color: white;
+    font-size: 20px;
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+}
+
+
+.search-delete{
+    display: flex;
+}
+
+/* delete btn */
+.delete-con {
+    color: black;
+    background-color: white;
+    font-size: 20px;
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+  }
+
+
+  .active, .delete-con:hover {
+    background-color: #ccc;
+  }
+  
+  
+  .content {
+    
+    display: none;
+    overflow: hidden;
+    
+  }
