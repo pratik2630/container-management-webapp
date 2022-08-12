@@ -106,6 +106,7 @@ li:hover::before {
     justify-content: flex-end;
 
 }
+
 .card.active {
   height: 100%;
 
@@ -137,4 +138,41 @@ li:hover::before {
     transform: translateX(0%);
     opacity: 1;
   }
+}
+
+/* images page css */
+.addbtn-img{
+
+
+  color: black;
+  background-color: green;
+  font-size: 20px;
+  border: 2px solid black;
+  padding: 5px;
+  border-radius: 10px;
+  transition-duration: 0.4s;
+}
+
+.addbtn-img:hover{
+  background-color: black;
+  color: white;
+}
+
+.buttons-images{
+  width: 81%;
+  display: inline-flex;
+    align-content: flex-end;
+    justify-content: flex-end;
+}
+.image-btns{
+  
+  color: red;
+  width: 40px;
+}
+.image-btns:hover{
+  background-color: rgb(107, 107, 114);
+}
+
+.image-search{
+  
 }

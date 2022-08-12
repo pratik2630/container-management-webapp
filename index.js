@@ -11,6 +11,9 @@ const { delete_container } = require("./public/delete_container")
 const { delete_all_container } = require("./public/delete_all_container")
 const { start_container } = require("./public/start_container")
 const { stop_container } = require("./public/stop_container")
+const { download_img } = require("./public/download")
+const { delete_image } = require("./public/delete_image")
+const { search_img } = require("./public/search_img")
 
 
 
@@ -71,6 +74,22 @@ app.get("/cdelete", (req , res)=>{
 //delete all container
 app.get("/cdelete_all", (req , res)=>{
     delete_all_container(req,res)
+})
+
+//download image
+app.get("/download_image", (req , res)=>{
+    download_img(req,res)
+})
+
+
+//delete image
+app.get("/delete_image", (req , res)=>{
+    delete_image(req,res)
+})
+
+// search image
+app.get("/search_image", (req , res)=>{
+    search_img(req,res)
 })
 
 

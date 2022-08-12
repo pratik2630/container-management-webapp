@@ -119,3 +119,25 @@ function delete_all_container_code() {
   xhttp.open("GET", "http://localhost:3001/cdelete_all");
   xhttp.send();
 }
+
+
+function download_image_ajax() { 
+  var iname = document.getElementById("containerName").value
+  const xhttp = new XMLHttpRequest();
+  xhttp.open("GET", "http://localhost:3001/download_image?image_name"+iname);
+  xhttp.send();
+}
+
+function delete_image_ajax() { 
+  var iname = document.getElementById("containerName").value
+  const xhttp = new XMLHttpRequest();
+  xhttp.open("GET", "http://localhost:3001/delete_image?image_name"+iname);
+  xhttp.send();
+}
+
+function search_image_ajax() { 
+  var iname = document.getElementById("containerName").value
+  const xhttp = new XMLHttpRequest();
+  xhttp.open("GET", "http://localhost:3001/search_image?image_name"+iname);
+  xhttp.send();
+}
