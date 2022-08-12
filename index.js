@@ -4,7 +4,11 @@ const {exec} =require("child_process")
 //ps
 
 const { ps_code } = require("./public/ps")
+
+const { psall_code } = require("./public/ps_all")
+
 const { dimage_code } = require("./public/dimage")
+const { drun_code } = require("./public/docker-run")
 
 
 
@@ -26,6 +30,11 @@ app.get("/ps" ,(req,res)=>{
 	ps_code(req , res)
 })
 
+//for ps -a command
+app.get("/ps_all" ,(req,res)=>{
+	psall_code(req , res)
+})
+
 app.get("/dimage" ,(req,res)=>{
 	dimage_code(req , res)
 })
@@ -36,14 +45,7 @@ app.get("/dimage" ,(req,res)=>{
 
 //get the data from 
 //run page for container
-app.get("/run", (req , res)=>{
-    const cname = req.query.cname;
-    const cimage = req.query.cimage;
-
-    exec('cal' , (err , stdout , stderr)=>{
-
-
-        res.send("<pre>"+stdout + "</pre>")
-    })
+app.get("/docker_run", (req , res)=>{
+    drun_code(req,res)
 })
 
