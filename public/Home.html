@@ -8,6 +8,7 @@
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+    <script src="https://kit.fontawesome.com/53b90b81d5.js" crossorigin="anonymous"></script>
   <title>Docker Web Ap</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="addContainer.css">
@@ -172,8 +173,14 @@
       <!-- Code of docker image page -->
       <div class="card images" data-images>
         <div class="title">Images</div>
-
-        <button onclick="dimage_code()">Display Images</button>
+        <div class="buttons-images">
+          <button class="addbtn-img" >Download</button>
+          <button class="addbtn-img">Delete</button>
+          
+          <button class="addbtn-img" onclick="dimage_code()">Display Images</button>
+          <input type="text" placeholder="Search Images" name="search" class="image-search">
+          <button type="submit" class="image-btns"><i class="fa fa-search"></i></button>
+        </div>
         <div class="content">
           <tr>
             <th>Container ID</th>
