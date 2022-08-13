@@ -12,8 +12,11 @@
   <title>Docker Web Ap</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="addContainer.css">
+  <link rel="stylesheet" href="popUp.css" />
   <script src="Home.js" defer></script>
-
+  <script src="start_container.js" defer></script>
+  
+ 
   <style>
     .formContainer {
       height: 25%;
@@ -55,11 +58,14 @@
       <div class="card active container" data-container>
         <div class="title">Containers</div>
         <div class="buttons">
+          <button class="addbtn" onclick="displayPopup()">Create Container</button>
+          <button class="addbtn" onclick="start_container()">start</button>
+          <button class="addbtn" onclick="stop_container()">Stop</button>
           <button class="addbtn" onclick="ps_code()">List</button>
           <button class="addbtn" onclick="psall_code()">List all</button>
-          <button class="addbtn">Delete</button>
-          <button class="addbtn">Delete All</button>
-          <button class="addbtn" onclick="displayPopup()">Create Container</button>
+          <button class="addbtn" onclick="delete_container()">Delete</button>
+          <button class="addbtn" onclick="delete_all_container()">Delete All</button>
+          
 
         </div>
         <div class="formContainer" id="formContainer">
@@ -74,12 +80,12 @@
               <!-- pop up form start -->
 
               <input type="text" name="container_name"  class="form-control" id="containerName" aria-describedby="emailHelp"
-                placeholder="Enter Container Name">
+                placeholder="Enter Container Name" required>
               
               </div>
               <div class="form-group">
                 <label for="name">Image Name</label>
-                <select name="container_image" id="containerImage" class="form-control form-control-lg">
+                <select name="container_image" id="containerImage" class="form-control form-control-lg" required>
                   <option>ubuntu</option>
                   <option>centos</option>
                 </select>
@@ -102,7 +108,48 @@
         <!-- pop up form end -->
 
 
+<!-- start container pop up start here -->
+<div  id="startContainerMainBox">
+  <div class="input">
+      <label for="imageName">Enter image name to start</label>
+      <input type="text" name="imageName" id="startImageName" required>
+  </div>
+  <div id="btn-flex">
+      <button id="startContainer" class="btnContainer" onclick="startContainer()">Start</button>
+      <button id="cancelContainer" class="btnContainer" onclick="cancelContainer()">Cancel</button>
+  </div>
+</div>
 
+<!-- start container pop up end here -->
+
+
+<!-- Stop container pop up end here -->
+<div  id="stopContainerMainBox">
+  <div class="input">
+      <label for="containerStop">Enter container name to Stop</label>
+      <input type="text" name="containerNameToStop" id="containerNameToStop" required>
+  </div>
+  <div id="btn-flex">
+      <button id="stopContainer" class="btnContainer" onclick="stopContainer()">Start</button>
+      <button id="cancelStopContainer" class="btnContainer" onclick="cancelStopContainer()">Cancel</button>
+  </div>
+</div>
+<script src="stop_container.js" ></script>
+<!-- Stop container pop up end here -->
+
+<!-- delete container pop up end here -->
+<div  id="deleteContainerMainBox">
+  <div class="input">
+      <label for="containerDelete">Enter container name to delete</label>
+      <input type="text" name="containerNameToDelete" id="containerNameToDelete" required>
+  </div>
+  <div id="btn-flex">
+      <button id="deleteContainer" class="btnContainer" onclick="deleteContainer()">Delete</button>
+      <button id="canceldeleteContainer" class="btnContainer" onclick="canceldeleteContainer()">Cancel</button>
+  </div>
+</div>
+
+<!-- delete container pop up end here -->
 
 
         <!-- form script start -->
@@ -114,25 +161,6 @@
             document.getElementById("formContainer").style.display = "none";
           }
           
-
-          function drun_code() {
-
-            var cname = document.getElementById("containerName").value
-            var cimage = document.getElementById("containerImage").value
-            var cport = document.getElementById("containerPort").value
-            
-            const xhttp = new XMLHttpRequest();
-  // xhttp.onload = function () {
-    // document.getElementById("container_content").innerHTML =
-    //   this.responseText;
-      // var cname = document.getElementById("containerName").value
-      // var cimage = document.getElementById("containerImage").value
-      // var cport = document.getElementById("containerPort").value
-//  }
-  xhttp.open("GET", "http://localhost:3001/docker_run?container_name="+cname+"&container_image="+cimage+"&container_port="+cport );
-  xhttp.send();
-}
-
         </script>
 
         <!-- form script end -->
@@ -169,7 +197,8 @@
 
 
 
-
+      <!-- Code of docker image page -->
+     
       <!-- Code of docker image page -->
       <div class="card images" data-images>
         <div class="title">Images</div>
@@ -190,6 +219,7 @@
           </tr>
           <div id="content">
 
+            <!-- images -->
             <!-- images -->
           </div>
         </div>
@@ -214,11 +244,14 @@
       </div>
     </main>
   </div>
+  
   <script>
     const showMessage = () => {
       alert("Hello JavaScript");
     };
   </script>
+   <script src="delete_container.js" ></script>
+  <script src="popUp.js"></script>
 </body>
 
 </html>

@@ -17,7 +17,7 @@ body {
   overflow: hidden;
 }
 .navbar-top{
-  height: 4%;
+  height: 10%;
  
 }
 
@@ -100,11 +100,12 @@ li:hover::before {
 }
 
 .buttons{
-    display: inline-flex;
-    width: 81%;
-    align-content: flex-end;
-    justify-content: flex-end;
-
+  display: inline-flex;
+  width: 81%;
+  align-content: flex-end;
+  justify-content: flex-end;
+  /* width: 100%; */
+  justify-content: space-evenly;
 }
 
 .card.active {
@@ -142,8 +143,6 @@ li:hover::before {
 
 /* images page css */
 .addbtn-img{
-
-
   color: black;
   background-color: green;
   font-size: 20px;
@@ -151,8 +150,19 @@ li:hover::before {
   padding: 5px;
   border-radius: 10px;
   transition-duration: 0.4s;
-}
 
+}
+.addbtn{
+  color: black;
+    background-color: green;
+    font-size: 20px;
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+    width: -webkit-fill-available;
+    margin: 10px;
+}
 .addbtn-img:hover{
   background-color: black;
   color: white;
@@ -176,4 +186,3 @@ li:hover::before {
 .image-search{
   
 }
-

@@ -1,0 +1,61 @@
+#startContainerMainBox {
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 50%;
+    /* margin-top: 20%; */
+    background-color: aqua;
+    width: 440px;
+    height: 100px;
+    padding: 30px;
+    border: 2px solid;
+    border-radius: 20px;
+    display: none;
+    position: absolute;
+}
+
+.input {
+    margin: 20px;
+}
+
+#btn-flex {
+    text-align: center;
+}
+
+.btnContainer {
+    padding: 5px 30px;
+    border: 2px solid;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+#stopContainerMainBox {
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    /* width: 50%; */
+    /* margin-top: 20%; */
+    background-color: rgb(174, 165, 230);
+    /* width: 440px; */
+    height: 100px;
+    padding: 30px;
+    border: 2px solid;
+    border-radius: 20px;
+    display: none;
+    position: absolute;
+}
+#deleteContainerMainBox{
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    /* width: 50%; */
+    /* margin-top: 20%; */
+    background-color: rgb(229, 184, 175);
+    /* width: 440px; */
+    height: 100px;
+    padding: 30px;
+    border: 2px solid;
+    border-radius: 20px;
+    display: none;
+    position: absolute;
+}
