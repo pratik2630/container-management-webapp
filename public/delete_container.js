@@ -4,7 +4,7 @@ const { exec } = require("child_process");
 
 function delete_container(req, res) {
 
-    document.getElementById("deleteContainerMainBox").style.display = "block";
+    // document.getElementById("deleteContainerMainBox").style.display = "block";
 
     var c_name = req.query.container_name;
 

@@ -4,7 +4,7 @@ const { exec } = require("child_process");
 
 function stop_container(req, res) {
    
-    document.getElementById("stopContainerMainBox").style.display = "block";
+    // document.getElementById("stopContainerMainBox").style.display = "block";
     var c_name=req.query.container_name;
 	
     cname = "docker stop " + c_name ;
