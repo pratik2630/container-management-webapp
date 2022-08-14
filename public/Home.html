@@ -5,18 +5,15 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
-    <script src="https://kit.fontawesome.com/53b90b81d5.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/53b90b81d5.js" crossorigin="anonymous"></script>
   <title>Docker Web App</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="addContainer.css">
   <link rel="stylesheet" href="popUp.css" />
   <script src="Home.js" defer></script>
   <script src="start_container.js" defer></script>
-  
- 
+
+  <!-- Form container PopUp -->
   <style>
     .formContainer {
       height: 25%;
@@ -31,7 +28,8 @@
       left: 43%;
       transform: translate(-50%, -50%);
     }
-    .table-style{
+
+    .table-style {
       width: 88%;
     }
   </style>
@@ -54,7 +52,7 @@
           <ul>
             <li class="selectedLink" name="container"><i class="fa-solid fa-box"></i> Containers</li>
             <li name="images"><i class="fa-solid fa-atom"></i> Images</li>
-            <li name="terminal"><i class="fa-solid fa-terminal"></i>  Terminal</li>
+            <li name="terminal"><i class="fa-solid fa-terminal"></i> Terminal</li>
             <li name="dockerfile"><i class="fa-solid fa-file"></i> Dockerfile</li>
           </ul>
         </nav>
@@ -63,6 +61,7 @@
     <main>
       <div class="card active container" data-container>
         <div class="title">Containers</div>
+        <!-- Container Page All Buttons Start -->
         <div class="buttons">
           <button class="addbtn" onclick="displayPopup()"><i class="fa-solid fa-plus"></i> Create Container </button>
           <button class="addbtn" onclick="start_container()"><i class="fa-solid fa-circle-play"></i> Start</button>
@@ -70,95 +69,92 @@
           <button class="addbtn" onclick="ps_code()"><i class="fa-solid fa-list"></i> List</button>
           <button class="addbtn" onclick="psall_code()"><i class="fa-solid fa-list-ol"></i> List all</button>
           <button class="addbtn" onclick="delete_container()"><i class="fa-solid fa-trash-can"></i> Delete</button>
-          <button class="addbtn" onclick="delete_all_container()"><i class="fa-solid fa-trash-can"></i> Delete All</button>
-          
-
+          <button class="addbtn" onclick="delete_all_container()"><i class="fa-solid fa-trash-can"></i> Delete
+            All</button>
         </div>
+        <!-- Container Page All Buttons End -->
+
+
+
+        <!-- Create Container PopUp Form Start -->
         <div class="formContainer" id="formContainer">
           <form>
             <div class="form-group">
               <label for="name">Container Name</label>
+              <input type="text" name="container_name" class="form-control" id="containerName"
+                aria-describedby="emailHelp" placeholder="Enter Container Name" required>
+            </div>
+            <div class="form-group">
+              <label for="name">Image Name</label>
+              <select name="container_image" id="containerImage" class="form-control form-control-lg" required>
+                <option>ubuntu</option>
+                <option>centos</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="name">Exposed Port</label>
+              <input name="container_port" type="text" class="form-control" id="containerPort"
+                aria-describedby="emailHelp" placeholder="Enter Exposed Port Number eg. 8080:80">
+
+            </div>
+
+            <div class="btn">
+              <button type="submit" class="submit-btn btn-same" onclick="drun_code()">Run</button>
+              <button type="cancel" class="cancel-btn btn-same" onclick="cancelPopup()">cancel</button>
+
+            </div>
+          </form>
+        </div>
+        <!-- Create Container PopUp Form End -->
+
+
+        <!-- Start Container PopUp Form Start -->
+        <div id="startContainerMainBox">
+          <div class="input">
+            <label for="imageName">Enter image name to start</label>
+            <input type="text" name="imageName" id="startImageName" required>
+          </div>
+          <div id="btn-flex">
+            <button id="startContainer" class="btnContainer" onclick="startContainer()">Start</button>
+            <button id="cancelContainer" class="btnContainer" onclick="cancelContainer()">Cancel</button>
+          </div>
+        </div>
+
+        <!-- Start Container PopUp Form End -->
+
+
+        <!-- Stop Container PopUp Form Start -->
+        <div id="stopContainerMainBox">
+          <div class="input">
+            <label for="containerStop">Enter container name to Stop</label>
+            <input type="text" name="containerNameToStop" id="containerNameToStop" required>
+          </div>
+          <div id="btn-flex">
+            <button id="stopContainer" class="btnContainer" onclick="stopContainer()">Start</button>
+            <button id="cancelStopContainer" class="btnContainer" onclick="cancelStopContainer()">Cancel</button>
+          </div>
+        </div>
+        <script src="stop_container.js"></script>
+        <!-- Stop Container PopUp Form End -->
 
 
 
+        <!-- Delete Container PopUp Form Start -->
+        <div id="deleteContainerMainBox">
+          <div class="input">
+            <label for="containerDelete">Enter container name to delete</label>
+            <input type="text" name="containerNameToDelete" id="containerNameToDelete" required>
+          </div>
+          <div id="btn-flex">
+            <button id="deleteContainer" class="btnContainer" onclick="deleteContainer()">Delete</button>
+            <button id="canceldeleteContainer" class="btnContainer" onclick="canceldeleteContainer()">Cancel</button>
+          </div>
+        </div>
 
-             
-              <!-- pop up form start -->
-
-              <input type="text" name="container_name"  class="form-control" id="containerName" aria-describedby="emailHelp"
-                placeholder="Enter Container Name" required>
-              
-              </div>
-              <div class="form-group">
-                <label for="name">Image Name</label>
-                <select name="container_image" id="containerImage" class="form-control form-control-lg" required>
-                  <option>ubuntu</option>
-                  <option>centos</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="name">Exposed Port</label>
-                <input name="container_port" type="text" class="form-control" id="containerPort" aria-describedby="emailHelp"
-                  placeholder="Enter Exposed Port Number eg. 8080:80">
-              
-              </div>
-              
-              <div class="btn">
-                <button type="submit" class="submit-btn btn-same" onclick="drun_code()">Run</button>
-                <button type="cancel" class="cancel-btn btn-same" onclick="cancelPopup()">cancel</button>
-              
-              </div>
-              </form>
-              </div>
-
-        <!-- pop up form end -->
+        <!-- Delete Container PopUp Form End -->
 
 
-<!-- start container pop up start here -->
-<div  id="startContainerMainBox">
-  <div class="input">
-      <label for="imageName">Enter image name to start</label>
-      <input type="text" name="imageName" id="startImageName" required>
-  </div>
-  <div id="btn-flex">
-      <button id="startContainer" class="btnContainer" onclick="startContainer()">Start</button>
-      <button id="cancelContainer" class="btnContainer" onclick="cancelContainer()">Cancel</button>
-  </div>
-</div>
-
-<!-- start container pop up end here -->
-
-
-<!-- Stop container pop up end here -->
-<div  id="stopContainerMainBox">
-  <div class="input">
-      <label for="containerStop">Enter container name to Stop</label>
-      <input type="text" name="containerNameToStop" id="containerNameToStop" required>
-  </div>
-  <div id="btn-flex">
-      <button id="stopContainer" class="btnContainer" onclick="stopContainer()">Start</button>
-      <button id="cancelStopContainer" class="btnContainer" onclick="cancelStopContainer()">Cancel</button>
-  </div>
-</div>
-<script src="stop_container.js" ></script>
-<!-- Stop container pop up end here -->
-
-<!-- delete container pop up end here -->
-<div  id="deleteContainerMainBox">
-  <div class="input">
-      <label for="containerDelete">Enter container name to delete</label>
-      <input type="text" name="containerNameToDelete" id="containerNameToDelete" required>
-  </div>
-  <div id="btn-flex">
-      <button id="deleteContainer" class="btnContainer" onclick="deleteContainer()">Delete</button>
-      <button id="canceldeleteContainer" class="btnContainer" onclick="canceldeleteContainer()">Cancel</button>
-  </div>
-</div>
-
-<!-- delete container pop up end here -->
-
-
-        <!-- form script start -->
+        <!--All PopUp Forms Script Start -->
         <script>
           function displayPopup() {
             document.getElementById("formContainer").style.display = "block";
@@ -169,10 +165,10 @@
           function stop_container() {
             document.getElementById("stopContainerMainBox").style.display = "block";
           }
-          function delete_container(){
+          function delete_container() {
             document.getElementById("deleteContainerMainBox").style.display = "block";
           }
-          function start_container(){
+          function start_container() {
             document.getElementById("startContainerMainBox").style.display = "block";
           }
 
@@ -181,12 +177,12 @@
           }
         </script>
 
-        <!-- form script end -->
+        <!-- All PopUp Forms Script End -->
 
 
 
 
-  <!-- container code -->
+        <!-- Container Page List Buttons Code Start -->
         <div class="content">
           <table class="table-style">
             <tr>
@@ -195,68 +191,69 @@
               <th>Command</th>
               <th>Container name</th>
             </tr>
-            <!-- <tr style="color: blue; background-color: aqua;">
-              <td id="id">id</td>
-              <td>img name</td>
-              <td>cmd</td>
-              <td> containr name</td> -->
-            <!-- </tr> -->
-            <!-- <div id="container_content" style="background-color:bisque ;">content</div> -->
           </table>
-          <div id="container_content" style="background-color:bisque ;">content</div>
-          <div id="container_content2" style="background-color:bisque ;">content ps all</div>
-          
-
+          <div id="container_content" style="background-color:bisque ;"></div>
+          <div id="container_content2" style="background-color:bisque ;"></div>
         </div>
       </div>
 
+      <!-- Container Page List Buttons Code End -->
 
 
 
 
 
+      <!-- Code of Images page -->
 
-      <!-- Code of docker image page -->
-     
-      <!-- Code of docker image page -->
       <div class="card images" data-images>
         <div class="title">Images</div>
+
+        <!-- Images Page All Buttons Start -->
         <div class="buttons-images">
           <div>
-          <button class="addbtn-img"><i class="fa-solid fa-download"></i> Download</button>
-          <!-- start container pop up start here -->
-<div  id="startContainerMainBox">
-  <div class="input">
-      <label for="imageName">Download Image</label>
-      <input type="text" name="imageName" id="downloadImageName" required>
-  </div>
-  <div id="btn-flex">
-      <!-- <button id="startContainer" class="btnContainer" onclick="startContainer()">Start</button>
-        
-      <button id="cancelContainer" class="btnContainer" onclick="cancelContainer()">Cancel</button> -->
-      <button id="startContainer" class="btnContainer" onclick="download_Container()">Start</button>
-  </div>
-</div>
+            <button class="addbtn-img"><i class="fa-solid fa-download"></i> Download</button>
 
-<!-- start container pop up end here -->
-          <button class="addbtn-img"><i class="fa-solid fa-trash-can"></i> Delete</button>
-          
-          <button class="addbtn-img" onclick="dimage_code()"><i class="fa-solid fa-display"></i> Display Images</button>
-        </div>
+
+
+
+            
+            
+            <div id="startContainerMainBox">
+              <div class="input">
+                <label for="imageName">Download Image</label>
+                <input type="text" name="imageName" id="downloadImageName" required>
+              </div>
+              <div id="btn-flex">
+      
+                <button id="startContainer" class="btnContainer" onclick="download_Container()">Start</button>
+              </div>
+            </div>
+
+            
+            <button class="addbtn-img"><i class="fa-solid fa-trash-can"></i> Delete</button>
+
+            <button class="addbtn-img" onclick="dimage_code()"><i class="fa-solid fa-display"></i> Display
+              Images</button>
+          </div>
           <form action="">
             <input type="text" placeholder="Search Images" name="search" class="image-search">
-          <button type="submit" class="image-btns"><i class="fa fa-search"></i></button>
+            <button type="submit" class="image-btns"><i class="fa fa-search"></i></button>
           </form>
         </div>
+
+        <!-- Images Page All Buttons Start -->
+
+
+        <!-- Display Image Table -->
         <div class="content" style="width: 88%;">
           <tr>
-            <th>Container ID</th>
             <th>Image Name</th>
-            <th>Command</th>
-            <th>Container name</th>
+            <th>Version</th>
+            <th>Container ID</th>
+            <th>Size</th>
           </tr>
           <div id="content">
-            
+
             <!-- images -->
             <!-- images -->
           </div>
@@ -282,13 +279,6 @@
       </div>
     </main>
   </div>
-  
-  <script>
-    const showMessage = () => {
-      alert("Hello JavaScript");
-    };
-  </script>
-   <script src="delete_container.js" ></script>
   <script src="popUp.js"></script>
 </body>
 

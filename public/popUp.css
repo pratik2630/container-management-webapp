@@ -59,3 +59,19 @@
     display: none;
     position: absolute;
 }
+
+#deleteAllContainerMainBox{
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    /* width: 50%; */
+    /* margin-top: 20%; */
+    background-color: rgb(229, 184, 175);
+    /* width: 440px; */
+    height: 100px;
+    padding: 30px;
+    border: 2px solid;
+    border-radius: 20px;
+    display: none;
+    position: absolute;
+}
