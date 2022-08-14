@@ -21,7 +21,8 @@
     .formContainer {
       height: 25%;
       border-radius: 10px;
-      background-color: rgb(216, 179, 179);
+      background-color: skyblue;
+      border: 2px solid black;
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       padding: 20px;
       display: none;
@@ -34,6 +35,12 @@
     .table-style{
       width: 88%;
     }
+
+    .table-style-2{
+      width: 80%;
+      margin-top: 20px;
+    }
+  
   </style>
 </head>
 
@@ -221,8 +228,8 @@
             <!-- </tr> -->
             <!-- <div id="container_content" style="background-color:bisque ;">content</div> -->
           </table>
-          <div id="container_content" style="background-color:bisque ;">content</div>
-          <div id="container_content2" style="background-color:bisque ;">content ps all</div>
+          <div id="container_content" style="background-color:bisque ;"></div>
+          <div id="container_content2" style="background-color:bisque ;"></div>
           
 
         </div>
@@ -266,20 +273,31 @@
           <button type="submit" class="image-btns"><i class="fa fa-search"></i></button>
           </form>
         </div>
-        <div class="content" style="width: 88%;">
-          <tr>
-            <th>Container ID</th>
-            <th>Image Name</th>
-            <th>Command</th>
-            <th>Container name</th>
-          </tr>
+
+        <div class="content">
+          <table class="table-style-2">
+            <tr>
+              <th>Name</th>
+              <th>Version</th>
+              <th>Container ID</th>
+              <th>Image Size</th>
+            </tr>
+            <!-- <tr style="color: blue; background-color: aqua;">
+              <td id="id">id</td>
+              <td>img name</td>
+              <td>cmd</td>
+              <td> containr name</td> -->
+            <!-- </tr> -->
+            <!-- <div id="container_content" style="background-color:bisque ;">content</div> -->
+          </table>
+          <!-- <div id="container_content" style="background-color:bisque ;"></div>
+          <div id="container_content2" style="background-color:bisque ;"></div> -->
+          
           <div id="content">
-            
-            <!-- images -->
-            <!-- images -->
-          </div>
+
         </div>
       </div>
+    </div>
 
 
       <div class=" card terminal" data-terminal>
