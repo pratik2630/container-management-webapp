@@ -176,7 +176,7 @@ li:hover::before {
 .addbtn{
   color: black;
     /* background-color: green; */
-    font-size: 20px;
+    font-size: 1vw;
     border: 2px solid black;
     padding: 5px;
     border-radius: 10px;
@@ -201,14 +201,14 @@ li:hover::before {
     align-content: flex-end;
     justify-content: flex-end; */
     /* display: inline-flex; */
+    display: flex;
+
     width: 81%;
     align-content: flex-end;
-    justify-content: flex-end;
-    /* width: 100%; */
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 .image-btns{
- margin-top: 10px;
+
   color: black;
   /* background-color: green; */
   font-size: 20px;

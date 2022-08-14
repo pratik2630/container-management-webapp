@@ -31,14 +31,17 @@
       left: 43%;
       transform: translate(-50%, -50%);
     }
+    .table-style{
+      width: 88%;
+    }
   </style>
 </head>
 
 <body>
   <div class="navbar-top">
-    <nav>
+    <nav id="top-nav">
 
-      <h1>Container Management Tool
+      <h1 id="logo-txt">Container Management Tool
         <i class="fa-brands fa-docker" id="logo"></i>
       </h1>
     </nav>
@@ -47,7 +50,7 @@
     <div class="side-navbar">
       <div class="navbar">
 
-        <nav>
+        <nav id="side-nav">
           <ul>
             <li class="selectedLink" name="container"><i class="fa-solid fa-box"></i> Containers</li>
             <li name="images"><i class="fa-solid fa-atom"></i> Images</li>
@@ -181,7 +184,7 @@
 
 
         <div class="content">
-          <table>
+          <table class="table-style">
             <tr>
               <th>Container ID</th>
               <th>Image Name</th>
@@ -214,16 +217,18 @@
       <div class="card images" data-images>
         <div class="title">Images</div>
         <div class="buttons-images">
-          <button class="addbtn-img"><i class="fa-solid fa-download"></i> Download</button>
+          <div>
+            <button class="addbtn-img"><i class="fa-solid fa-download"></i> Download</button>
           <button class="addbtn-img"><i class="fa-solid fa-trash-can"></i> Delete</button>
           
           <button class="addbtn-img" onclick="dimage_code()"><i class="fa-solid fa-display"></i> Display Images</button>
+          </div>
           <form action="">
             <input type="text" placeholder="Search Images" name="search" class="image-search">
           <button type="submit" class="image-btns"><i class="fa fa-search"></i></button>
           </form>
         </div>
-        <div class="content">
+        <div class="content" style="width: 88%;">
           <tr>
             <th>Container ID</th>
             <th>Image Name</th>
