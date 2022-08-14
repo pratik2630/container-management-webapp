@@ -11,9 +11,7 @@ function drun_code(req, res) {
 	res.write("Cname: "+ c_name +" Cimage:"+ c_image + " cport: "+ c_port);
     console.log("Cname: "+ c_name +" Cimage:"+ c_image + " cport: "+ c_port);
 	// cname = "docker run -dit --name "+ c_name + " " + c_image;
-	console.log(cname)
-    console.log("cport type: "+typeof c_port)
-    console.log("cport length: "+c_port.length)
+	
     if (c_port.length == 0){
         console.log("port not defined")
         cname = "docker run -dit --name "+ c_name + " " + c_image;

@@ -118,10 +118,10 @@
 <div  id="startContainerMainBox">
   <div class="input">
       <label for="imageName">Enter image name to start</label>
-      <input type="text" name="imageName" id="startImageName" required>
+      <input type="text" name="container_name" id="start_container" required>
   </div>
   <div id="btn-flex">
-      <button id="startContainer" class="btnContainer" onclick="startContainer()">Start</button>
+      <button id="startContainer" class="btnContainer" onclick="start_code()">Start</button>
       <button id="cancelContainer" class="btnContainer" onclick="cancelContainer()">Cancel</button>
   </div>
 </div>
@@ -129,18 +129,18 @@
 <!-- start container pop up end here -->
 
 
-<!-- Stop container pop up end here -->
+<!-- Stop container pop up starts here -->
 <div  id="stopContainerMainBox">
   <div class="input">
       <label for="containerStop">Enter container name to Stop</label>
       <input type="text" name="containerNameToStop" id="containerNameToStop" required>
   </div>
   <div id="btn-flex">
-      <button id="stopContainer" class="btnContainer" onclick="stopContainer()">Start</button>
+      <button id="stopContainer" class="btnContainer" onclick="stop_code()">Stop</button>
       <button id="cancelStopContainer" class="btnContainer" onclick="cancelStopContainer()">Cancel</button>
   </div>
 </div>
-<script src="stop_container.js" ></script>
+<!-- <script src="stop_container.js" ></script> -->
 <!-- Stop container pop up end here -->
 
 <!-- delete container pop up end here -->
@@ -150,7 +150,7 @@
       <input type="text" name="containerNameToDelete" id="containerNameToDelete" required>
   </div>
   <div id="btn-flex">
-      <button id="deleteContainer" class="btnContainer" onclick="deleteContainer()">Delete</button>
+      <button id="deleteContainer" class="btnContainer" onclick="delete_container_code()">Delete</button>
       <button id="canceldeleteContainer" class="btnContainer" onclick="canceldeleteContainer()">Cancel</button>
   </div>
 </div>
@@ -158,8 +158,26 @@
 <!-- delete container pop up end here -->
 
 
+
+<!-- delete all container pop up end here -->
+<div  id="deleteAllContainerMainBox">
+  <div class="input">
+    <h2> This button will delete all stopped containers. Don't proceed until you are 100% sure.To delete runnning containers first stop them</h2>
+    
+    <label for="containerDelete">Type <b>Delete </b> to delete</label>
+      <input type="text" name="containerAllToDelete" id="containerAllToDelete" required>
+  </div>
+  <div id="btn-flex">
+      <button id="deleteAllContainer" class="btnContainer" onclick="delete_all_container_code()">Delete</button>
+      <button id="cancelAlldeleteContainer" class="btnContainer" onclick="canceldeleteAllContainer()">Cancel</button>
+  </div>
+</div>
+
+<!-- delete container pop up end here -->
+
+
         <!-- form script start -->
-        <script>
+        <!-- <script>
           function displayPopup() {
             document.getElementById("formContainer").style.display = "block";
           }
@@ -179,7 +197,7 @@
           function download_container() {
             document.getElementById("stopContainerMainBox").style.display = "block";
           }
-        </script>
+        </script> -->
 
         <!-- form script end -->
 
