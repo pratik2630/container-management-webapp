@@ -17,8 +17,26 @@ body {
   overflow: hidden;
 }
 .navbar-top{
-  height: 10%;
+  height: 50px;
+  background-color: rgb(49, 14, 82);
+
  
+ 
+}
+.navbar-top h1{
+  height: 50px;
+  background-color: rgb(49, 14, 82);
+  color: white;
+  font-size: 30px;
+ 
+ 
+}
+#logo{
+  font-size: 36px;
+  font-weight: 100px;
+}
+#logo-txt{
+  text-align: center;
 }
 
 .container {
@@ -32,7 +50,7 @@ body {
 
 main {
   height: 100%;
-  margin: 2px;
+  
   overflow: hidden;
   border: 1px solid black;
  
@@ -46,6 +64,9 @@ main {
   width: 20%;
   align-items: center;
   justify-content: center;
+}
+.top-nav{
+  text-align: center;
 }
 .navbar {
   width: 100%;
@@ -144,7 +165,7 @@ li:hover::before {
 /* images page css */
 .addbtn-img{
   color: black;
-  background-color: green;
+  /* background-color: green; */
   font-size: 20px;
   border: 2px solid black;
   padding: 5px;
@@ -154,7 +175,7 @@ li:hover::before {
 }
 .addbtn{
   color: black;
-    background-color: green;
+    /* background-color: green; */
     font-size: 20px;
     border: 2px solid black;
     padding: 5px;
@@ -163,20 +184,39 @@ li:hover::before {
     width: -webkit-fill-available;
     margin: 10px;
 }
+
+.addbtn:hover{
+  background-color: black;
+  color: white;
+}
+
 .addbtn-img:hover{
   background-color: black;
   color: white;
 }
 
 .buttons-images{
-  width: 81%;
+  /* width: 81%;
   display: inline-flex;
     align-content: flex-end;
+    justify-content: flex-end; */
+    /* display: inline-flex; */
+    width: 81%;
+    align-content: flex-end;
     justify-content: flex-end;
+    /* width: 100%; */
+    justify-content: space-evenly;
 }
 .image-btns{
+ margin-top: 10px;
+  color: black;
+  /* background-color: green; */
+  font-size: 20px;
+  border: 2px solid black;
+  padding: 5px;
+  border-radius: 10px;
+  transition-duration: 0.4s;
   
-  color: red;
   width: 40px;
 }
 .image-btns:hover{
@@ -184,5 +224,13 @@ li:hover::before {
 }
 
 .image-search{
-  
+ 
+  color: black;
+  /* background-color: green; */
+  font-size: 20px;
+  border: 2px solid black;
+  padding: 5px;
+  border-radius: 10px;
+  transition-duration: 0.4s;
 }
+
