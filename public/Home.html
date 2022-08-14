@@ -175,6 +175,10 @@
           function start_container(){
             document.getElementById("startContainerMainBox").style.display = "block";
           }
+
+          function download_container() {
+            document.getElementById("stopContainerMainBox").style.display = "block";
+          }
         </script>
 
         <!-- form script end -->
@@ -182,7 +186,7 @@
 
 
 
-
+  <!-- container code -->
         <div class="content">
           <table class="table-style">
             <tr>
@@ -200,7 +204,8 @@
             <!-- <div id="container_content" style="background-color:bisque ;">content</div> -->
           </table>
           <div id="container_content" style="background-color:bisque ;">content</div>
-
+          <div id="container_content2" style="background-color:bisque ;">content ps all</div>
+          
 
         </div>
       </div>
@@ -218,11 +223,26 @@
         <div class="title">Images</div>
         <div class="buttons-images">
           <div>
-            <button class="addbtn-img"><i class="fa-solid fa-download"></i> Download</button>
+          <button class="addbtn-img"><i class="fa-solid fa-download"></i> Download</button>
+          <!-- start container pop up start here -->
+<div  id="startContainerMainBox">
+  <div class="input">
+      <label for="imageName">Download Image</label>
+      <input type="text" name="imageName" id="downloadImageName" required>
+  </div>
+  <div id="btn-flex">
+      <!-- <button id="startContainer" class="btnContainer" onclick="startContainer()">Start</button>
+        
+      <button id="cancelContainer" class="btnContainer" onclick="cancelContainer()">Cancel</button> -->
+      <button id="startContainer" class="btnContainer" onclick="download_Container()">Start</button>
+  </div>
+</div>
+
+<!-- start container pop up end here -->
           <button class="addbtn-img"><i class="fa-solid fa-trash-can"></i> Delete</button>
           
           <button class="addbtn-img" onclick="dimage_code()"><i class="fa-solid fa-display"></i> Display Images</button>
-          </div>
+        </div>
           <form action="">
             <input type="text" placeholder="Search Images" name="search" class="image-search">
           <button type="submit" class="image-btns"><i class="fa fa-search"></i></button>
@@ -236,7 +256,7 @@
             <th>Container name</th>
           </tr>
           <div id="content">
-
+            
             <!-- images -->
             <!-- images -->
           </div>

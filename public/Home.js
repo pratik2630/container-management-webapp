@@ -35,11 +35,12 @@ const highLightSelectedLink = (currentIndex) => {
 function ps_code() {
   const xhttp = new XMLHttpRequest();
   xhttp.onload = function () {
-    document.getElementById("container_content").innerHTML =
+    document.getElementById("container_content2").innerHTML =
       this.responseText;
   }
   xhttp.open("GET", "http://13.233.49.96:3000/ps");
   xhttp.send();
+  document.getElementById("container_content").innerHTML = ""
 }
 
 
@@ -52,6 +53,7 @@ function psall_code() {
   }
   xhttp.open("GET", "http://13.233.49.96:3000/ps_all");
   xhttp.send();
+  document.getElementById("container_content2").innerHTML = ""
 }
 
 
