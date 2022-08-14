@@ -22,20 +22,9 @@ function deleteContainer() {
  
 }
 
-
 function canceldeleteContainer() {
     alert("canceldeleteContainer")
     document.getElementById("deleteContainerMainBox").style.display = "none";
-}
-
-function deleteContainerAll() {
-    alert("deleteContainer")
-    document.getElementById("deleteAllContainerMainBox").style.display = "none";
-}
-
-function cancelAllContainer() {
-    alert("canceldeleteContainer")
-    document.getElementById("deleteContainerAllMainBox").style.display = "none";
 }
 
 
