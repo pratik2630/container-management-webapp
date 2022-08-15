@@ -3,7 +3,9 @@
 * {
   margin: 0;
   padding: 0;
-  
+  background-color: black;
+  color: lime;
+  border: 1px solid lime;  
   font-family: "Poppins", sans-serif;
 }
 
@@ -241,4 +243,18 @@ li:hover::before {
 #container_content > table{
   width: 108%;
 
+}
+#image_table_content{
+  background-color: aqua;
+}
+#image_table_content td {
+  /* background-color: blue; */
+  width:20vw;
+  text-align: center;
+  /* display: block; */
+  
+}
+#table-style-2 th{
+  /* background-color: blue; */
+  width:20vw;
 }

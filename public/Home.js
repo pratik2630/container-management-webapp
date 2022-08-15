@@ -38,7 +38,7 @@ function ps_code() {
     document.getElementById("container_content2").innerHTML =
       this.responseText;
   }
-  xhttp.open("GET", "http://13.233.49.96:3000/ps");
+  xhttp.open("GET", "http://localhost:3000/ps");
   xhttp.send();
   document.getElementById("container_content").innerHTML = ""
 }
@@ -51,7 +51,7 @@ function psall_code() {
     document.getElementById("container_content").innerHTML =
       this.responseText;
   }
-  xhttp.open("GET", "http://13.233.49.96:3000/ps_all");
+  xhttp.open("GET", "http://localhost:3000/ps_all");
   xhttp.send();
   document.getElementById("container_content2").innerHTML = ""
 }
@@ -65,7 +65,7 @@ function dimage_code() {
     document.getElementById("content").innerHTML =
       this.responseText;
   }
-  xhttp.open("GET", "http://13.233.49.96:3000/dimage");
+  xhttp.open("GET", "http://localhost:3000/dimage");
   xhttp.send();
 }
 
@@ -80,7 +80,7 @@ function drun_code() {
   
   const xhttp = new XMLHttpRequest();
 
-xhttp.open("GET", "http://13.233.49.96:3000/docker_run?container_name="+cname+"&container_image="+cimage+"&container_port="+cport );
+xhttp.open("GET", "http://localhost:3000/docker_run?container_name="+cname+"&container_image="+cimage+"&container_port="+cport );
 xhttp.send();
 }
 
@@ -93,7 +93,7 @@ function start_code() {
   console.log("cname fron home js"+ cname)
   const xhttp = new XMLHttpRequest();
   alert("Container "+ cname + "will be started soon!")
-xhttp.open("GET", "http://13.233.49.96:3000/start?container_name="+cname);
+xhttp.open("GET", "http://localhost:3000/start?container_name="+cname);
 xhttp.send();
 }
 
@@ -104,7 +104,7 @@ function stop_code() {
   const xhttp = new XMLHttpRequest();
 
   alert("Container "+cname+" will be stopped soon. ")
-xhttp.open("GET", "http://13.233.49.96:3000/stop?containerNameToStop="+cname );
+xhttp.open("GET", "http://localhost:3000/stop?containerNameToStop="+cname );
 xhttp.send();
 }
 
@@ -114,7 +114,7 @@ function delete_container_code() {
   const xhttp = new XMLHttpRequest();
 
   alert("Container "+ cname+ " will be deleted soon")
-  xhttp.open("GET", "http://13.233.49.96:3000/cdelete?containerNameToDelete="+cname );
+  xhttp.open("GET", "http://localhost:3000/cdelete?containerNameToDelete="+cname );
   xhttp.send();
 }
 
@@ -124,7 +124,7 @@ function delete_all_container_code() {
   
   const xhttp = new XMLHttpRequest();
   console.log("cdelte:"+cname)
-  xhttp.open("GET", "http://13.233.49.96:3000/cdelete_all?containerAllToDelete="+cname);
+  xhttp.open("GET", "http://localhost:3000/cdelete_all?containerAllToDelete="+cname);
   xhttp.send();
 }
 
@@ -132,21 +132,21 @@ function delete_all_container_code() {
 function download_image_ajax() { 
   var iname = document.getElementById("containerName").value
   const xhttp = new XMLHttpRequest();
-  xhttp.open("GET", "http://13.233.49.96:3000/download_image?image_name"+iname);
+  xhttp.open("GET", "http://localhost:3000/download_image?image_name"+iname);
   xhttp.send();
 }
 
 function delete_image_ajax() { 
   var iname = document.getElementById("containerName").value
   const xhttp = new XMLHttpRequest();
-  xhttp.open("GET", "http://13.233.49.96:3000/delete_image?image_name"+iname);
+  xhttp.open("GET", "http://localhost:3000/delete_image?image_name"+iname);
   xhttp.send();
 }
 
 function search_image_ajax() { 
   var iname = document.getElementById("containerName").value
   const xhttp = new XMLHttpRequest();
-  xhttp.open("GET", "http://13.233.49.96:3000/search_image?image_name"+iname);
+  xhttp.open("GET", "http://localhost:3000/search_image?image_name"+iname);
   xhttp.send();
 }
 
