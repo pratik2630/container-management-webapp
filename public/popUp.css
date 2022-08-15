@@ -1,17 +1,15 @@
 #startContainerMainBox {
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    width: 50%;
-    /* margin-top: 20%; */
-    background-color: aqua;
-    width: 440px;
-    height: 100px;
-    padding: 30px;
-    border: 2px solid;
-    border-radius: 20px;
+    height: 25%;
+    border-radius: 10px;
+    background-color: skyblue;
+    color: black;
+    padding: 20px;
     display: none;
     position: absolute;
+    top: 48%;
+    left: 43%;
+    transform: translate(-50%, -50%);
+    
 }
 
 .input {
@@ -30,47 +28,43 @@
 }
 
 #stopContainerMainBox {
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    /* width: 50%; */
-    /* margin-top: 20%; */
-    background-color: rgb(174, 165, 230);
-    /* width: 440px; */
-    height: 100px;
-    padding: 30px;
-    border: 2px solid;
-    border-radius: 20px;
+    height: 25%;
+    border-radius: 10px;
+    background-color: skyblue;
+    color: black;
+    padding: 20px;
     display: none;
     position: absolute;
+    top: 48%;
+    left: 43%;
+    transform: translate(-50%, -50%);
+
 }
 #deleteContainerMainBox{
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    /* width: 50%; */
-    /* margin-top: 20%; */
-    background-color: rgb(229, 184, 175);
-    /* width: 440px; */
-    height: 100px;
-    padding: 30px;
-    border: 2px solid;
-    border-radius: 20px;
+    height: 25%;
+    border-radius: 10px;
+    background-color: skyblue;
+    color: black;
+    padding: 20px;
     display: none;
     position: absolute;
+    top: 48%;
+    left: 43%;
+    transform: translate(-50%, -50%);
+
 }
 #deleteAllContainerMainBox{
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    /* width: 50%; */
-    /* margin-top: 20%; */
-    background-color: rgb(229, 184, 175);
-    /* width: 440px; */
-    height: 100px;
-    padding: 30px;
-    border: 2px solid;
-    border-radius: 20px;
+
+    height: 25%;
+    border-radius: 10px;
+    background-color: skyblue;
+    color: black;
+
+    padding: 20px;
     display: none;
     position: absolute;
+    top: 48%;
+    left: 43%;
+    transform: translate(-50%, -50%);
+
 }
