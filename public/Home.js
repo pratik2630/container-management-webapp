@@ -130,16 +130,18 @@ function delete_all_container_code() {
 
 
 function download_image_ajax() { 
-  var iname = document.getElementById("containerName").value
+  var iname = document.getElementById("imageNameToDownload").value
+  alert(iname+" will be downloaded soon. Download time depends on internet speed and image size.")
   const xhttp = new XMLHttpRequest();
-  xhttp.open("GET", "http://localhost:3000/download_image?image_name"+iname);
+  xhttp.open("GET", "http://localhost:3000/download_image?imageNameToDownload="+iname);
   xhttp.send();
 }
 
 function delete_image_ajax() { 
-  var iname = document.getElementById("containerName").value
+  var iname = document.getElementById("imageNameToDelete").value
+  alert("Image "+iname+" will be deleted soon.")
   const xhttp = new XMLHttpRequest();
-  xhttp.open("GET", "http://localhost:3000/delete_image?image_name"+iname);
+  xhttp.open("GET", "http://localhost:3000/delete_image?imageNameToDelete="+iname);
   xhttp.send();
 }
 

@@ -95,6 +95,7 @@
           <button class="addbtn" onclick="psall_code()">
             <i class="fa-solid fa-list-ol"></i> List all
           </button>
+    
           <button class="addbtn" onclick="delete_container()">
             <i class="fa-solid fa-trash-can"></i> Delete
           </button>
@@ -214,34 +215,6 @@
           </div>
         </div>
 
-        <!-- delete container pop up end here -->
-
-
-        <!-- form script start -->
-        <!-- <script>
-          function displayPopup() {
-            document.getElementById("formContainer").style.display = "block";
-          }
-          function cancelPopup() {
-            document.getElementById("formContainer").style.display = "none";
-          }
-          function stop_container() {
-            document.getElementById("stopContainerMainBox").style.display = "block";
-          }
-          function delete_container(){
-            document.getElementById("deleteContainerMainBox").style.display = "block";
-          }
-          function start_container(){
-            document.getElementById("startContainerMainBox").style.display = "block";
-          }
-
-          function download_container() {
-            document.getElementById("stopContainerMainBox").style.display = "block";
-          }
-        </script> -->
-
-        <!-- form script end -->
-
         <!-- container code -->
         <div class="content">
           <table class="table-style">
@@ -288,7 +261,7 @@
                 <input type="text" name="imageNameToDelete" id="imageNameToDelete" required />
               </div>
               <div id="btn-flex">
-                <button id="deleteImage" class="btnContainer" onclick="delete_container_code()">
+                <button id="deleteImage" class="btnContainer" onclick="delete_image_ajax()">
                   Delete
                 </button>
                 <button id="canceldeleteImage" class="btnContainer" onclick="canceldeleteImage()">
@@ -305,7 +278,7 @@
                   <input type="text" name="imageNameToDelete" id="imageNameToDelete" required />
                 </div>
                 <div id="btn-flex">
-                  <button id="deleteImage" class="btnContainer" onclick="">
+                  <button id="deleteImage" class="btnContainer" onclick="delete_image_ajax()">
                     Delete
                   </button>
                   <button id="canceldeleteImage" class="btnContainer" onclick="canceldeleteImage()">
@@ -322,8 +295,8 @@
                   <input type="text" name="imageNameToDownload" id="imageNameToDownload" required />
                 </div>
                 <div id="btn-flex">
-                  <button id="downloadImage" class="btnContainer" onclick="">
-                    Delete
+                  <button id="downloadImage" class="btnContainer" onclick="download_image_ajax()">
+                    Download
                   </button>
                   <button id="cancelDownloadImage" class="btnContainer" onclick="cancelDownloadImage()">
                     Cancel
@@ -334,7 +307,7 @@
   <!-- Search pop up start here -->
   <div id="searchPopup">
   <div>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae facere autem minima neque culpa nulla sit, quia dolorum? Assumenda, odit! Quos qui cum voluptates, adipisci harum sint. Autem veniam amet rerum voluptatibus cum quia sit quaerat omnis mollitia optio ipsum sapiente, exercitationem porro beatae magnam nostrum laboriosam obcaecati? Cumque, quaerat ipsam? Quas, sit velit, officia, eos porro optio obcaecati maxime deserunt odio blanditiis dicta quisquam hic distinctio dolore ea amet sequi labore! Eos temporibus aut similique provident. Iusto, dignissimos recusandae minima adipisci soluta quos nobis atque a, eveniet impedit ullam voluptas voluptatum. Minima, quia cumque ab eum alias recusandae sunt reiciendis voluptate error, facilis ipsa dignissimos laudantium magni non? Debitis quaerat, ipsam animi atque natus nam libero tempore ex laborum odit, sunt est alias voluptates sit, sequi doloribus architecto inventore unde quasi corrupti consequatur minus ullam iste assumenda. Debitis fugiat molestiae aliquam repellat, facilis harum explicabo. Aliquid nesciunt, unde iusto aut voluptatum debitis voluptatem cupiditate ut nobis id ipsa eligendi tenetur natus impedit molestiae, dolorem odio! Fuga numquam laudantium maxime fugiat autem dolore eaque omnis amet repellat. Itaque quasi aspernatur perspiciatis aperiam necessitatibus eaque dicta consequuntur reiciendis? Quaerat iure magni eligendi quos nesciunt dolorum earum fuga eaque a veritatis! Id. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero pariatur ea sit molestiae corporis voluptate quasi delectus! Assumenda, possimus ipsa.</p>
+   <h1 style="text-align: center; ">Work in progress</h1>
   </div>
     <div id="btn-flex">
      

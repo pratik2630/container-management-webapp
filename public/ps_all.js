@@ -5,7 +5,7 @@ function psall_code(req, res) {
      exec("docker ps -a| tail -n +2", (err, stdout, stderr) => {
       //  exec("docker ps | sed '1d;$d'", (err, stdout, stderr) => {
         let a = stdout.split("\n");
-        res.write("<table  align='center' width='80%'>");
+        res.write("<table  id='psall_table' align='center' width='80%'>");
         // res.write(`<tr>
         //                 <th>Container ID</th>
         //                 <th>Image Name</th>

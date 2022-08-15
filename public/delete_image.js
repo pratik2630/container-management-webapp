@@ -4,7 +4,7 @@ const { exec } = require("child_process");
 
 function delete_image(req, res) {
 
-    var i_name=req.query.image_name;
+    var i_name=req.query.imageNameToDelete;
 	
         cname = "docker rmi "+ i_name;
     

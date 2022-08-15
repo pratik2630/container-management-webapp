@@ -245,14 +245,38 @@ li:hover::before {
 #image_table_content{
   background-color: aqua;
 }
-#image_table_content td {
+
+
+  #image_table_content td {
   /* background-color: blue; */
   width:20vw;
   text-align: center;
   /* display: block; */
   color: black;
+  padding: 5px 0px;
   font-size: 1.5rem;
+  /* border: 1px solid black; */
+  /* margin-bottom: 15px ; */
 }
+
+#container_data_content td{
+  /* background-color: blue; */
+  width:20vw;
+  text-align: center;
+  /* display: block; */
+  color: black;
+  padding: 5px 0px;
+  font-size: 1.5rem;
+  /* border: 1px solid black; */
+  /* margin-bottom: 15px ; */
+}
+
+
+
+
+#image_table_content tr {
+  margin-bottom: 15px ;
+  }
 #table-style-2 th{
   /* background-color: blue; */
   width:20vw;
