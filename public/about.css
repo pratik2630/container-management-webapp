@@ -1,0 +1,6 @@
+.aboutContent{
+    display: flex;
+    width: 80%;
+    font-size: 1.2rem;
+overflow-y: scroll;
+}

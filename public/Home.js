@@ -218,3 +218,30 @@ function start_container(){
 function download_container() {
   document.getElementById("stopContainerMainBox").style.display = "block";
 }
+function deleteImagePopup(){
+  document.getElementById("deleteImageBox").style.display = "block";
+
+}
+function canceldeleteImage(){
+  document.getElementById("deleteImageBox").style.display = "none";
+
+}
+function downloadImagePopup(){
+  document.getElementById("downloadImageBox").style.display = "block";
+
+}
+function cancelDownloadImage(){
+  document.getElementById("downloadImageBox").style.display = "none";
+
+}
+function searchPopup(e){
+
+  document.getElementById("searchPopup").style.display = "block";
+  e = e || window.event;
+  e.preventDefault();
+
+}
+function cancelSearchPopup(){
+  document.getElementById("searchPopup").style.display = "none";
+
+}

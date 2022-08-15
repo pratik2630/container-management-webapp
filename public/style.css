@@ -1,3 +1,4 @@
+html { scroll-behavior: smooth; } 
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 * {
@@ -11,7 +12,7 @@ body {
   width: 100vw;
  
   justify-content: center;
-  
+  font-family: "Poppins", sans-serif;
 
   overflow: hidden;
 }
@@ -249,9 +250,18 @@ li:hover::before {
   width:20vw;
   text-align: center;
   /* display: block; */
-  
+  color: black;
+  font-size: 1.5rem;
 }
 #table-style-2 th{
   /* background-color: blue; */
   width:20vw;
+}
+#table-style-2 {
+  color: black;
+  font-size: 1.5rem;
+  margin-top: 12px;
+}
+#midle{
+  text-align: center;
 }

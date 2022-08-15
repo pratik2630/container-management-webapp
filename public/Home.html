@@ -1,300 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
-    <script
-      src="https://kit.fontawesome.com/53b90b81d5.js"
-      crossorigin="anonymous"
-    ></script>
-    <title>Docker Web App</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="addContainer.css" />
-    <link rel="stylesheet" href="popUp.css" />
-    <link rel="stylesheet" href="terminal.css" />
-    <script src="Home.js" defer></script>
-    <script src="start_container.js" defer></script>
+  <script src="https://kit.fontawesome.com/53b90b81d5.js" crossorigin="anonymous"></script>
+  <title>Docker Web App</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="addContainer.css" />
+  <link rel="stylesheet" href="popUp.css" />
+  <link rel="stylesheet" href="terminal.css" />
+  <link rel="stylesheet" href="about.css">
+  <script src="Home.js" defer></script>
+  <script src="start_container.js" defer></script>
 
-    <style>
-      .formContainer {
-        height: 25%;
-        border-radius: 10px;
-        background-color: skyblue;
-        border: 2px solid black;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        padding: 20px;
-        display: none;
-        position: absolute;
-        position: absolute;
-        top: 48%;
-        left: 43%;
-        transform: translate(-50%, -50%);
-      }
-      .table-style {
-        width: 88%;
-      }
+  <style>
+    .formContainer {
+      height: 25%;
+      border-radius: 10px;
+      background-color: skyblue;
+      border: 2px solid black;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      padding: 20px;
+      display: none;
+      position: absolute;
+      position: absolute;
+      top: 48%;
+      left: 43%;
+      transform: translate(-50%, -50%);
+    }
 
-      .table-style-2 {
-        width: 80%;
-        margin-top: 20px;
-      }
-    </style>
-  </head>
+    .table-style {
+      width: 88%;
+    }
 
-  <body>
-    <div class="navbar-top">
-      <nav id="top-nav">
-        <h1 id="logo-txt">
-          Container Management Tool
-          <i class="fa-brands fa-docker" id="logo"></i>
-        </h1>
-      </nav>
-    </div>
-    <div class="container">
-      <div class="side-navbar">
-        <div class="navbar">
-          <nav id="side-nav">
-            <ul>
-              <li class="selectedLink" name="container">
-                <i class="fa-solid fa-box"></i> Containers
-              </li>
-              <li name="images"><i class="fa-solid fa-atom"></i> Images</li>
-              <li name="terminal">
-                <i class="fa-solid fa-terminal"></i> Terminal
-              </li>
-              <li name="dockerfile">
-                <i class="fa-solid fa-file"></i> Dockerfile
-              </li>
-            </ul>
-          </nav>
-        </div>
+    .table-style-2 {
+      width: 80%;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar-top">
+    <nav id="top-nav">
+      <h1 id="logo-txt">
+        Container Management Tool
+        <i class="fa-brands fa-docker" id="logo"></i>
+      </h1>
+    </nav>
+  </div>
+  <div class="container">
+    <div class="side-navbar">
+      <div class="navbar">
+        <nav id="side-nav">
+          <ul>
+            <li class="selectedLink" name="container">
+              <i class="fa-solid fa-box"></i> Containers
+            </li>
+            <li name="images"><i class="fa-solid fa-atom"></i> Images</li>
+            <li name="terminal">
+              <i class="fa-solid fa-terminal"></i> Terminal
+            </li>
+            <li name="dockerfile">
+              <i class="fa-solid fa-file"></i> Dockerfile
+            </li>
+            <li name="About">
+              <i class="fa-solid fa-circle-info"></i> About
+            </li>
+          </ul>
+        </nav>
       </div>
-      <main>
-        <div class="card active container" data-container>
-          <div class="title">Containers</div>
-          <div class="buttons">
-            <button class="addbtn" onclick="displayPopup()">
-              <i class="fa-solid fa-plus"></i> Create Container
+    </div>
+    <main>
+      <div class="card active container" data-container>
+        <div class="title">Containers</div>
+        <div class="buttons">
+          <button class="addbtn" onclick="displayPopup()">
+            <i class="fa-solid fa-plus"></i> Create Container
+          </button>
+          <button class="addbtn" onclick="start_container()">
+            <i class="fa-solid fa-circle-play"></i> Start
+          </button>
+          <button class="addbtn" onclick="stop_container()">
+            <i class="fa-solid fa-ban"></i> Stop
+          </button>
+          <button class="addbtn" onclick="ps_code()">
+            <i class="fa-solid fa-list"></i> List
+          </button>
+          <button class="addbtn" onclick="psall_code()">
+            <i class="fa-solid fa-list-ol"></i> List all
+          </button>
+          <button class="addbtn" onclick="delete_container()">
+            <i class="fa-solid fa-trash-can"></i> Delete
+          </button>
+          <button class="addbtn" onclick="delete_all_container()">
+            <i class="fa-solid fa-trash-can"></i> Delete All
+          </button>
+        </div>
+        <div class="formContainer" id="formContainer">
+          <form>
+            <div class="form-group">
+              <label for="name">Container Name</label>
+
+              <!-- pop up form start -->
+
+              <input type="text" name="container_name" class="form-control" id="containerName"
+                aria-describedby="emailHelp" placeholder="Enter Container Name" required />
+            </div>
+            <div class="form-group">
+              <label for="name">Image Name</label>
+              <select name="container_image" id="containerImage" class="form-control form-control-lg" required>
+                <option>ubuntu</option>
+                <option>centos</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="name">Exposed Port</label>
+              <input name="container_port" type="text" class="form-control" id="containerPort"
+                aria-describedby="emailHelp" placeholder="Enter Exposed Port Number eg. 8080:80" />
+            </div>
+
+            <div class="btn">
+              <button type="submit" class="submit-btn btn-same" onclick="drun_code()">
+                Run
+              </button>
+              <button type="cancel" class="cancel-btn btn-same" onclick="cancelPopup()">
+                cancel
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- pop up form end -->
+
+        <!-- start container pop up start here -->
+        <div id="startContainerMainBox">
+          <div class="input">
+            <label for="imageName">Enter image name to start</label>
+            <input type="text" name="container_name" id="start_container" required />
+          </div>
+          <div id="btn-flex">
+            <button id="startContainer" class="btnContainer" onclick="start_code()">
+              Start
             </button>
-            <button class="addbtn" onclick="start_container()">
-              <i class="fa-solid fa-circle-play"></i> Start
-            </button>
-            <button class="addbtn" onclick="stop_container()">
-              <i class="fa-solid fa-ban"></i> Stop
-            </button>
-            <button class="addbtn" onclick="ps_code()">
-              <i class="fa-solid fa-list"></i> List
-            </button>
-            <button class="addbtn" onclick="psall_code()">
-              <i class="fa-solid fa-list-ol"></i> List all
-            </button>
-            <button class="addbtn" onclick="delete_container()">
-              <i class="fa-solid fa-trash-can"></i> Delete
-            </button>
-            <button class="addbtn" onclick="delete_all_container()">
-              <i class="fa-solid fa-trash-can"></i> Delete All
+            <button id="cancelContainer" class="btnContainer" onclick="cancelContainer()">
+              Cancel
             </button>
           </div>
-          <div class="formContainer" id="formContainer">
-            <form>
-              <div class="form-group">
-                <label for="name">Container Name</label>
+        </div>
 
-                <!-- pop up form start -->
+        <!-- start container pop up end here -->
 
-                <input
-                  type="text"
-                  name="container_name"
-                  class="form-control"
-                  id="containerName"
-                  aria-describedby="emailHelp"
-                  placeholder="Enter Container Name"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="name">Image Name</label>
-                <select
-                  name="container_image"
-                  id="containerImage"
-                  class="form-control form-control-lg"
-                  required
-                >
-                  <option>ubuntu</option>
-                  <option>centos</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="name">Exposed Port</label>
-                <input
-                  name="container_port"
-                  type="text"
-                  class="form-control"
-                  id="containerPort"
-                  aria-describedby="emailHelp"
-                  placeholder="Enter Exposed Port Number eg. 8080:80"
-                />
-              </div>
-
-              <div class="btn">
-                <button
-                  type="submit"
-                  class="submit-btn btn-same"
-                  onclick="drun_code()"
-                >
-                  Run
-                </button>
-                <button
-                  type="cancel"
-                  class="cancel-btn btn-same"
-                  onclick="cancelPopup()"
-                >
-                  cancel
-                </button>
-              </div>
-            </form>
+        <!-- Stop container pop up starts here -->
+        <div id="stopContainerMainBox">
+          <div class="input">
+            <label for="containerStop">Enter container name to Stop</label>
+            <input type="text" name="containerNameToStop" id="containerNameToStop" required />
           </div>
-
-          <!-- pop up form end -->
-
-          <!-- start container pop up start here -->
-          <div id="startContainerMainBox">
-            <div class="input">
-              <label for="imageName">Enter image name to start</label>
-              <input
-                type="text"
-                name="container_name"
-                id="start_container"
-                required
-              />
-            </div>
-            <div id="btn-flex">
-              <button
-                id="startContainer"
-                class="btnContainer"
-                onclick="start_code()"
-              >
-                Start
-              </button>
-              <button
-                id="cancelContainer"
-                class="btnContainer"
-                onclick="cancelContainer()"
-              >
-                Cancel
-              </button>
-            </div>
+          <div id="btn-flex">
+            <button id="stopContainer" class="btnContainer" onclick="stop_code()">
+              Stop
+            </button>
+            <button id="cancelStopContainer" class="btnContainer" onclick="cancelStopContainer()">
+              Cancel
+            </button>
           </div>
+        </div>
+        <!-- <script src="stop_container.js" ></script> -->
+        <!-- Stop container pop up end here -->
 
-          <!-- start container pop up end here -->
-
-          <!-- Stop container pop up starts here -->
-          <div id="stopContainerMainBox">
-            <div class="input">
-              <label for="containerStop">Enter container name to Stop</label>
-              <input
-                type="text"
-                name="containerNameToStop"
-                id="containerNameToStop"
-                required
-              />
-            </div>
-            <div id="btn-flex">
-              <button
-                id="stopContainer"
-                class="btnContainer"
-                onclick="stop_code()"
-              >
-                Stop
-              </button>
-              <button
-                id="cancelStopContainer"
-                class="btnContainer"
-                onclick="cancelStopContainer()"
-              >
-                Cancel
-              </button>
-            </div>
+        <!-- delete container pop up end here -->
+        <div id="deleteContainerMainBox">
+          <div class="input">
+            <label for="containerDelete">Enter container name to delete</label>
+            <input type="text" name="containerNameToDelete" id="containerNameToDelete" required />
           </div>
-          <!-- <script src="stop_container.js" ></script> -->
-          <!-- Stop container pop up end here -->
-
-          <!-- delete container pop up end here -->
-          <div id="deleteContainerMainBox">
-            <div class="input">
-              <label for="containerDelete"
-                >Enter container name to delete</label
-              >
-              <input
-                type="text"
-                name="containerNameToDelete"
-                id="containerNameToDelete"
-                required
-              />
-            </div>
-            <div id="btn-flex">
-              <button
-                id="deleteContainer"
-                class="btnContainer"
-                onclick="delete_container_code()"
-              >
-                Delete
-              </button>
-              <button
-                id="canceldeleteContainer"
-                class="btnContainer"
-                onclick="canceldeleteContainer()"
-              >
-                Cancel
-              </button>
-            </div>
+          <div id="btn-flex">
+            <button id="deleteContainer" class="btnContainer" onclick="delete_container_code()">
+              Delete
+            </button>
+            <button id="canceldeleteContainer" class="btnContainer" onclick="canceldeleteContainer()">
+              Cancel
+            </button>
           </div>
+        </div>
 
-          <!-- delete container pop up end here -->
+        <!-- delete container pop up end here -->
 
-          <!-- delete all container pop up end here -->
-          <div id="deleteAllContainerMainBox">
-            <div class="input">
-              <h2>
-                This button will delete all stopped containers. Don't proceed
-                until you are 100% sure.To delete runnning containers first stop
-                them
-              </h2>
+        <!-- delete all container pop up end here -->
+        <div id="deleteAllContainerMainBox">
+          <div class="input">
+            <h2>
+              This button will delete all stopped containers. Don't proceed
+              until you are 100% sure.To delete runnning containers first stop
+              them
+            </h2>
 
-              <label for="containerDelete">Type <b>Delete </b> to delete</label>
-              <input
-                type="text"
-                name="containerAllToDelete"
-                id="containerAllToDelete"
-                required
-              />
-            </div>
-            <div id="btn-flex">
-              <button
-                id="deleteAllContainer"
-                class="btnContainer"
-                onclick="delete_all_container_code()"
-              >
-                Delete
-              </button>
-              <button
-                id="cancelAlldeleteContainer"
-                class="btnContainer"
-                onclick="canceldeleteAllContainer()"
-              >
-                Cancel
-              </button>
-            </div>
+            <label for="containerDelete">Type <b>Delete </b> to delete</label>
+            <input type="text" name="containerAllToDelete" id="containerAllToDelete" required />
           </div>
+          <div id="btn-flex">
+            <button id="deleteAllContainer" class="btnContainer" onclick="delete_all_container_code()">
+              Delete
+            </button>
+            <button id="cancelAlldeleteContainer" class="btnContainer" onclick="canceldeleteAllContainer()">
+              Cancel
+            </button>
+          </div>
+        </div>
 
-          <!-- delete container pop up end here -->
+        <!-- delete container pop up end here -->
 
-          <!-- form script start -->
-          <!-- <script>
+
+        <!-- form script start -->
+        <!-- <script>
           function displayPopup() {
             document.getElementById("formContainer").style.display = "block";
           }
@@ -316,125 +240,260 @@
           }
         </script> -->
 
-          <!-- form script end -->
+        <!-- form script end -->
 
-          <!-- container code -->
-          <div class="content">
-            <table class="table-style">
-              <tr>
-                <th>Container ID</th>
-                <th>Image Name</th>
-                <th>Command</th>
-                <th>Container name</th>
-              </tr>
-            </table>
-            <div id="container_content" style="background-color: bisque"></div>
-            <div id="container_content2" style="background-color: bisque"></div>
-          </div>
+        <!-- container code -->
+        <div class="content">
+          <table class="table-style">
+            <tr>
+              <th>Container ID</th>
+              <th>Image Name</th>
+              <th>Command</th>
+              <th>Container name</th>
+            </tr>
+          </table>
+          <hr>
+          <div id="container_content" style="background-color: bisque"></div>
+          <div id="container_content2" style="background-color: bisque"></div>
         </div>
+      </div>
 
-        <!-- Code of docker image page -->
+      <!-- Code of docker image page -->
 
-        <!-- Code of docker image page -->
-        <div class="card images" data-images>
-          <div class="title">Images</div>
-          <div class="buttons-images">
-            <div>
-              <button class="addbtn-img">
-                <i class="fa-solid fa-download"></i> Download
-              </button>
-              <!-- start container pop up start here -->
-              <div id="startContainerMainBox">
+      <!-- Code of docker image page -->
+      <div class="card images" data-images>
+        <div class="title">Images</div>
+        <div class="buttons-images">
+          <div>
+            <button class="addbtn-img" onclick="downloadImagePopup()">
+              <i class="fa-solid fa-download"></i> Download
+            </button>
+            <!-- start container pop up start here -->
+            <div id="startContainerMainBox">
+              <div class="input">
+                <label for="imageName">Download Image</label>
+                <input type="text" name="imageName" id="downloadImageName" required />
+              </div>
+              <div id="btn-flex">
+                <button id="startContainer" class="btnContainer" onclick="download_Container()">
+                  Start
+                </button>
+              </div>
+            </div>
+
+            <!-- delete container pop up of images start here -->
+            <div id="deleteImageBox">
+              <div class="input">
+                <label for="containerDelete">Enter image name to delete</label>
+                <input type="text" name="imageNameToDelete" id="imageNameToDelete" required />
+              </div>
+              <div id="btn-flex">
+                <button id="deleteImage" class="btnContainer" onclick="delete_container_code()">
+                  Delete
+                </button>
+                <button id="canceldeleteImage" class="btnContainer" onclick="canceldeleteImage()">
+                  Cancel
+                </button>
+              </div>
+            </div>
+            <!-- delete container pop up of images end here -->
+
+              <!-- delete container pop up of images start here -->
+              <div id="deleteImageBox">
                 <div class="input">
-                  <label for="imageName">Download Image</label>
-                  <input
-                    type="text"
-                    name="imageName"
-                    id="downloadImageName"
-                    required
-                  />
+                  <label for="containerDelete">Enter image name to delete</label>
+                  <input type="text" name="imageNameToDelete" id="imageNameToDelete" required />
                 </div>
                 <div id="btn-flex">
-                  <button
-                    id="startContainer"
-                    class="btnContainer"
-                    onclick="download_Container()"
-                  >
-                    Start
+                  <button id="deleteImage" class="btnContainer" onclick="">
+                    Delete
+                  </button>
+                  <button id="canceldeleteImage" class="btnContainer" onclick="canceldeleteImage()">
+                    Cancel
                   </button>
                 </div>
               </div>
+              <!-- delete container pop up of images end here -->
 
-              <!-- start container pop up end here -->
-              <button class="addbtn-img">
-                <i class="fa-solid fa-trash-can"></i> Delete
-              </button>
-
-              <button class="addbtn-img" onclick="dimage_code()">
-                <i class="fa-solid fa-display"></i> Display Images
-              </button>
-            </div>
-            <form action="">
-              <input
-                type="text"
-                placeholder="Search Images"
-                name="search"
-                class="image-search"
-              />
-              <button type="submit" class="image-btns">
-                <i class="fa fa-search"></i>
-              </button>
-            </form>
-          </div>
-
-          <div id="table-style-2">
-            <table ">
-              <tr>
-                <th>Name</th>
-                <th>Version</th>
-                <th>Container ID</th>
-                <th>Image Size</th>
-              </tr>             
-            </table>
-            <div id="content">
-              
-
-            </div>
-          </div>
-        </div>
-
-        <div class="card terminal" data-terminal>
-          <div class="title">Terminal Page</div>
-          <div class="docker_name_input">
-            Enter running container Name:<input
-              name="running_container"
-              id="running_container"
-              placeholder="Enter running container name "
-            />
-
-            <button class="connect_btn">Connect</button>
-            <button class="connect_btn">Cancle</button>
-          </div>
-
-          <div class="content">
-            <!-- Content Here -->
-          </div>
-        </div>
-        <div class="card dockerfile" data-dockerfile>
-          <div class="title">Dockerfile</div>
-          <div class="content">
-            <!-- Content Here -->
-          </div>
-        </div>
-      </main>
+              <!-- delete container pop up of images start here -->
+              <div id="downloadImageBox">
+                <div class="input">
+                  <label for="containerDownload">Enter image name to download</label>
+                  <input type="text" name="imageNameToDownload" id="imageNameToDownload" required />
+                </div>
+                <div id="btn-flex">
+                  <button id="downloadImage" class="btnContainer" onclick="">
+                    Delete
+                  </button>
+                  <button id="cancelDownloadImage" class="btnContainer" onclick="cancelDownloadImage()">
+                    Cancel
+                  </button>
+                </div>
+              </div>
+              <!-- delete container pop up of images end here -->
+  <!-- Search pop up start here -->
+  <div id="searchPopup">
+  <div>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae facere autem minima neque culpa nulla sit, quia dolorum? Assumenda, odit! Quos qui cum voluptates, adipisci harum sint. Autem veniam amet rerum voluptatibus cum quia sit quaerat omnis mollitia optio ipsum sapiente, exercitationem porro beatae magnam nostrum laboriosam obcaecati? Cumque, quaerat ipsam? Quas, sit velit, officia, eos porro optio obcaecati maxime deserunt odio blanditiis dicta quisquam hic distinctio dolore ea amet sequi labore! Eos temporibus aut similique provident. Iusto, dignissimos recusandae minima adipisci soluta quos nobis atque a, eveniet impedit ullam voluptas voluptatum. Minima, quia cumque ab eum alias recusandae sunt reiciendis voluptate error, facilis ipsa dignissimos laudantium magni non? Debitis quaerat, ipsam animi atque natus nam libero tempore ex laborum odit, sunt est alias voluptates sit, sequi doloribus architecto inventore unde quasi corrupti consequatur minus ullam iste assumenda. Debitis fugiat molestiae aliquam repellat, facilis harum explicabo. Aliquid nesciunt, unde iusto aut voluptatum debitis voluptatem cupiditate ut nobis id ipsa eligendi tenetur natus impedit molestiae, dolorem odio! Fuga numquam laudantium maxime fugiat autem dolore eaque omnis amet repellat. Itaque quasi aspernatur perspiciatis aperiam necessitatibus eaque dicta consequuntur reiciendis? Quaerat iure magni eligendi quos nesciunt dolorum earum fuga eaque a veritatis! Id. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero pariatur ea sit molestiae corporis voluptate quasi delectus! Assumenda, possimus ipsa.</p>
+  </div>
+    <div id="btn-flex">
+     
+      <button id="canceldeleteImage" class="btnContainer" onclick="cancelSearchPopup()">
+        Cancel
+      </button>
     </div>
+  </div>
+  <!-- search pop up  end here -->
+            <!-- start container pop up end here -->
+            <button class="addbtn-img"  onclick="deleteImagePopup()">
+              <i class="fa-solid fa-trash-can"></i> Delete
+            </button>
 
-    <script>
-      const showMessage = () => {
-        alert("Hello JavaScript");
-      };
-    </script>
-    <script src="delete_container.js"></script>
-    <script src="popUp.js"></script>
-  </body>
+            <button class="addbtn-img" onclick="dimage_code()">
+              <i class="fa-solid fa-display"></i> Display Images
+            </button>
+          </div>
+          <form action="">
+            <input type="text" placeholder="Search Images" name="search" class="image-search" />
+            <button type="submit" class="image-btns" onclick="searchPopup()" id="submit">
+              <i class="fa fa-search"></i>
+            </button>
+          </form>
+        </div>
+
+        <div id="table-style-2">
+          <table>
+            <tr>
+              <th>Name</th>
+              <th>Version</th>
+              <th>Container ID</th>
+              <th>Image Size</th>
+            </tr>
+          </table>
+          <hr>
+          <div id="content">
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="card terminal" data-terminal>
+        <div class="title">Terminal Page</div>
+        <div class="docker_name_input">
+          Enter running container Name:<input name="running_container" id="running_container"
+            placeholder="Enter running container name " />
+
+          <button class="connect_btn">Connect</button>
+          <button class="connect_btn">Cancle</button>
+        </div>
+
+        <div class="content">
+          <!-- Content Here -->
+        </div>
+      </div>
+      <div class="card dockerfile" id="dockerFileOne" data-dockerfile>
+        <div class="title">Dockerfile</div>
+        <div class="aboutContent">
+          <div id="aboutDockerMain">
+            <h1 id="midle">Work in proress.........</h1>
+            <div id="aboutText">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit sapiente adipisci obcaecati,
+                tempore eius quasi sint fugiat quidem quibusdam dicta cupiditate iure officia enim voluptate quaerat
+                ratione minima aliquam et, distinctio autem harum! Magni laudantium quisquam explicabo nisi, sint
+                perferendis.
+                Quo explicabo laborum ab repudiandae maxime provident sit perspiciatis in?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod fugit odio modi, consectetur ratione ipsa
+                nam deserunt similique mollitia ut exercitationem consequuntur sequi aliquam quidem provident numquam et
+                facilis cupiditate fugiat corrupti nostrum, libero labore. Distinctio, modi recusandae neque deleniti,
+                vero aperiam quae doloribus molestias aliquam porro placeat debitis! Magnam ducimus incidunt repellat
+                exercitationem qui dolore corporis! Magnam, molestias quidem quas nihil blanditiis eaque ut dolores nemo
+                voluptatem commodi sint ex aliquid pariatur! Debitis at dignissimos iure dolorem odit illum deleniti hic
+                ex? Dignissimos modi repellendus quibusdam molestias ullam iusto optio tempora reiciendis mollitia
+                architecto, sit corporis asperiores sunt aspernatur?</p>
+            </div>
+            <div id="flexBox">
+              <div id="firstBox">
+                <div id="firstBoxData">
+
+                  <h1>firstbox</h1>
+                  <img
+                    src="data:image/jpeg;base64,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"
+                    alt="">
+                  <li><a href="https://docs.docker.com/get-started/" target="_blank">Get started</a></li>
+                </div>
+              </div>
+
+              <div id="secoundBox">
+                <div id="secoundBoxData">
+
+                  <h1>secoundBox</h1>
+                  <img
+                    src="data:image/jpeg;base64,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"
+                    alt="">
+                  <li><a href="https://docs.docker.com/get-started/" target="_blank">Get started</a></li>
+                </div>
+              </div>
+
+              <div id="thirdBox">
+                <div id="thirdBoxData">
+
+                  <h1>thirdBox</h1>
+                  <img
+                    src="data:image/jpeg;base64,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"
+                    alt="">
+                  <li><a href="https://docs.docker.com/get-started/" target="_blank">Get started</a></li>
+                </div>
+              </div>
+            </div>
+            <div id="devloperBox">
+              <h1 id="devlopedByText">Devloped By</h1>
+              <div id="devlopedBy">
+                <div id="devOne">
+                  <h1>first</h1>
+                </div>
+                <div id="devTwo">
+                  <h1>secound</h1>
+
+                </div>
+                <div id="devThree">
+                  <h1>third</h1>
+
+                </div>
+                <div id="devFour">
+                  <h1>fourth</h1>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- docker page end -->
+
+      <!-- about page start -->
+      <div class="card dockerfile" data-about>
+        <div class="title">Dockerfile</div>
+        <div class="content">
+          <h1 id="midle">Work in proress.........</h1>
+          <!-- Content Here -->
+        </div>
+      </div>
+      <!-- about page end -->
+
+
+    </main>
+  </div>
+
+  <script>
+    const showMessage = () => {
+      alert("Hello JavaScript");
+    };
+  </script>
+  <script src="delete_container.js"></script>
+  <script src="popUp.js"></script>
+</body>
+
 </html>
