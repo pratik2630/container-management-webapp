@@ -1,10 +1,10 @@
+html { scroll-behavior: smooth; } 
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 * {
   margin: 0;
   padding: 0;
-  
-  font-family: "Poppins", sans-serif;
+ font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -12,13 +12,32 @@ body {
   width: 100vw;
  
   justify-content: center;
-  
+  font-family: "Poppins", sans-serif;
 
   overflow: hidden;
 }
 .navbar-top{
-  height: 4%;
+  height: 8vh;
+  background-color: rgb(49, 14, 82);
+  padding: auto;
  
+ 
+}
+.navbar-top h1{
+  height: 50px;
+  background-color: rgb(49, 14, 82);
+  color: white;
+  font-size: 30px;
+ 
+ 
+}
+#logo{
+  font-size: 36px;
+  font-weight: 100px;
+}
+#logo-txt{
+  font-size: 40px;
+  text-align: center;
 }
 
 .container {
@@ -32,7 +51,7 @@ body {
 
 main {
   height: 100%;
-  margin: 2px;
+  
   overflow: hidden;
   border: 1px solid black;
  
@@ -46,6 +65,9 @@ main {
   width: 20%;
   align-items: center;
   justify-content: center;
+}
+.top-nav{
+  text-align: center;
 }
 .navbar {
   width: 100%;
@@ -100,11 +122,12 @@ li:hover::before {
 }
 
 .buttons{
-    display: inline-flex;
-    width: 81%;
-    align-content: flex-end;
-    justify-content: flex-end;
-
+  display: inline-flex;
+  width: 81%;
+  align-content: flex-end;
+  justify-content: flex-end;
+  /* width: 100%; */
+  justify-content: space-evenly;
 }
 
 .card.active {
@@ -142,15 +165,31 @@ li:hover::before {
 
 /* images page css */
 .addbtn-img{
-
-
   color: black;
-  background-color: green;
+  /* background-color: green; */
   font-size: 20px;
   border: 2px solid black;
   padding: 5px;
   border-radius: 10px;
   transition-duration: 0.4s;
+  margin: 0 10px;
+
+}
+.addbtn{
+  color: black;
+    /* background-color: green; */
+    font-size: 1vw;
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+    width: -webkit-fill-available;
+    margin: 10px;
+}
+
+.addbtn:hover{
+  background-color: black;
+  color: white;
 }
 
 .addbtn-img:hover{
@@ -159,14 +198,29 @@ li:hover::before {
 }
 
 .buttons-images{
-  width: 81%;
+  padding-top:10px ;
+  /* width: 81%;
   display: inline-flex;
     align-content: flex-end;
-    justify-content: flex-end;
+    justify-content: flex-end; */
+    /* display: inline-flex; */
+    display: flex;
+
+    width: 81%;
+    align-content: flex-end;
+    justify-content: space-between;
+    margin: 0 10px ;
 }
 .image-btns{
+
+  color: black;
+  /* background-color: green; */
+  font-size: 20px;
+  border: 2px solid black;
+  padding: 5px;
+  border-radius: 10px;
+  transition-duration: 0.4s;
   
-  color: red;
   width: 40px;
 }
 .image-btns:hover{
@@ -174,5 +228,64 @@ li:hover::before {
 }
 
 .image-search{
-  
+ 
+  color: black;
+  /* background-color: green; */
+  font-size: 20px;
+  border: 2px solid black;
+  padding: 5px;
+  border-radius: 10px;
+  transition-duration: 0.4s;
 }
+
+#container_content > table{
+  width: 108%;
+
+}
+#image_table_content{
+  background-color: aqua;
+}
+
+
+  #image_table_content td {
+  /* background-color: blue; */
+  width:20vw;
+  text-align: center;
+  /* display: block; */
+  color: black;
+  padding: 5px 0px;
+  font-size: 1.5rem;
+  /* border: 1px solid black; */
+  /* margin-bottom: 15px ; */
+}
+
+#container_data_content td{
+  /* background-color: blue; */
+  width:20vw;
+  text-align: center;
+  /* display: block; */
+  color: black;
+  padding: 5px 0px;
+  font-size: 1.5rem;
+  /* border: 1px solid black; */
+  /* margin-bottom: 15px ; */
+}
+
+
+
+
+#image_table_content tr {
+  margin-bottom: 15px ;
+  }
+#table-style-2 th{
+  /* background-color: blue; */
+  width:20vw;
+}
+#table-style-2 {
+  color: black;
+  font-size: 1.5rem;
+  margin-top: 12px;
+}
+/* #midle{
+  text-align: center;
+} */
