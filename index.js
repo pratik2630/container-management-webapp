@@ -20,7 +20,7 @@ const { search_img } = require("./public/search_img")
 const app = express()
 app.use(express.static("public"));
 
-app.listen(3001, ()=>{
+app.listen(3000, ()=>{
     console.log("Server Started !!")    
 } )
 
