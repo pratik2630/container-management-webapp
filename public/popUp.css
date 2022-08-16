@@ -14,12 +14,41 @@
 
 .input {
     margin: 20px;
+    padding: 5px;
+    display: inline-grid;
+
+    font-size: 20px;
 }
+.input input{
+    padding: 5px;
+    font-size: 15px;
+    margin: 10px 0 0 0;
+    margin-left: 20px;
+}
+
+
 
 #btn-flex {
     text-align: center;
 }
+#btn-flex button {
+    height: 45px;
+    width: 130px;
+    color: black;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    font-size: 20px;
+    border: 2px solid black;
+    padding: 5px;
+    /* border-radius: 10px; */
+    transition-duration: 0.4s;
+    text-align: center;
+}
 
+#btn-flex button:hover{
+    background-color: black;
+    color: white;
+}
 .btnContainer {
     padding: 5px 30px;
     border: 2px solid;
@@ -57,6 +86,7 @@
 #deleteAllContainerMainBox{
 
     height: 25%;
+    width: 30%;
     border-radius: 10px;
     background-color: skyblue;
     color: black;
