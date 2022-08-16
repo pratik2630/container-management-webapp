@@ -1,0 +1,10 @@
+Docker commands to be inserted.
+
+
+#docker run cmd
+
+docker run -dit --name container-name image-name
+
+#list docker images
+
+docker images
