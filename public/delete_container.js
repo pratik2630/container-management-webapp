@@ -4,16 +4,18 @@ const { exec } = require("child_process");
 
 function delete_container(req, res) {
 
-    var c_name=req.query.container_name;
-	
-        cname = "docker rm "+ c_name;
-    
-	exec(cname , (err , stdout , stderr)=>{
-		res.write("<br /><pre>Deleted "+stdout+"</pre>");
+    // document.getElementById("deleteContainerMainBox").style.display = "block";
 
-       res.send();
-        
-	})
+    var c_name = req.query.containerNameToDelete;
+    console.log("c_name fron delete container js :"+c_name)
+    cname = "docker rm " + c_name;
+
+    exec(cname, (err, stdout, stderr) => {
+        res.write("<br /><pre>Deleted " + stdout + "</pre>");
+
+        res.send();
+
+    })
 }
 
 module.exports = {
